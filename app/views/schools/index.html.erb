@@ -1,0 +1,12 @@
+<h1>Schools</h1>
+
+<ul>
+  <% @schools.each do |school| %>
+    <h4><%= school.name %></h4>
+    <h4><%= school.coach %></h4>
+    <h4><%= school.address %></h4>
+    <h4><%= school.city %></h4>
+    <h4><%= school.state %></h4>
+    <h4><%= school.zip %></h4>
+  <% end %>
+</ul>

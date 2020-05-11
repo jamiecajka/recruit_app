@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+body {
+  background-color: #4f4f4f;
+  color: #f27820;
+}
+
+.logo-pic {
+  width: 100%;
+}
+
+.basketball_pic {
+  width: 100%;
+}
+
+.public_menu {
+  text-align: center;
+  color: #f27820;
+}
+
+.public_links {
+  text-decoration: none;
+  text-shadow: 3px 3px black;
+  color: #f27820;
+  font-size: 75px;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.form_header {
+  font-size: 40px;
+}
+
+.middle_info {
+  font-size: 30px;
+}
+
+.row {
+  font-size: 25px;
+  margin: 10px;
+}
+
+.more_links {
+  text-decoration: none;
+  color: inherit;
+  font-size: 25px;
+}
+
+.form-actions {
+  padding-left: 25px;
+  color: inherit;
+}
+
+.user_links {
+  text-decoration: none;
+  font-size: 30px;
+  color: inherit;
+}
+
+.public_menu h1 {
+  font-size: 45px;
+}

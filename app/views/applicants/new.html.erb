@@ -1,0 +1,110 @@
+<div class='wrapper'>
+  <%= form_for @applicant do |f| %>
+
+    <div class="row">
+      <h1 class="form_header">Submit a Player Interest Form</h1>
+      <h3>Fields with * are required</h3>
+      </div>
+      <div class="row">
+        <%= f.label :school_id, 'School *', class: 'form-actions' %>
+        <%= f.select :school_id, School.all.collect { |s| [s.name, s.id] } %>
+      </div>
+      <div>
+        <h3><%= link_to 'If your school is not listed, click here to add', new_school_path, :class=>'more_links'  %></h3>
+      </div>
+      <div class="row">
+      <%= f.label :name, 'Full Name *', class: 'form-actions' %>
+      <%= f.text_field :name, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :address, 'Address *', class: 'form-actions' %>
+      <%= f.text_field :address, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :city, 'City *', class: 'form-actions' %>
+      <%= f.text_field :city, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :state, 'State *', class: 'form-actions' %>
+      <%= f.text_field :state, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :zip, 'Zip Code *', class: 'form-actions' %>
+      <%= f.text_field :zip, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :email, 'Email *', class: 'form-actions' %>
+      <%= f.text_field :email, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :phone, 'Phone *', class: 'form-actions' %>
+      <%= f.text_field :phone, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :height, 'Height *', class: 'form-actions' %>
+      <%= f.text_field :height, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :gpa, 'GPA *', class: 'form-actions' %>
+      <%= f.text_field :gpa, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :act, 'ACT Score', class: 'form-actions' %>
+      <%= f.text_field :act %>
+    </div>
+    <div class="row">
+      <%= f.label :year_id, 'Graduation Year *', class: 'form-actions' %>
+      <%= f.select :year_id, Year.where(active: true ).collect { |y| [y.year, y.id] } %>
+    </div>
+    <div class="row">
+      <%= f.label :position_id, 'Position *', class: 'form-actions' %>
+      <%= f.select :position_id, Position.all.collect { |p| [p.name, p.id] } %>
+    </div>
+      <div class="middle_info">
+      <h3>If known, enter player stats</h3>
+    </div>
+    <div class="row">
+      <%= f.label :minutes, 'Minutes', class: 'form-actions' %>
+      <%= f.text_field :minutes %>
+    </div>
+    <div class="row">
+      <%= f.label :ppg, 'Points', class: 'form-actions' %>
+      <%= f.text_field :ppg %>
+    </div>
+    <div class="row">
+      <%= f.label :o_rebound, 'Offensive Rebounds', class: 'form-actions' %>
+      <%= f.text_field :o_rebound %>
+    </div>
+    <div class="row">
+      <%= f.label :d_rebound, 'Defensive Rebounds', class: 'form-actions' %>
+      <%= f.text_field :d_rebound %>
+    </div>
+    <div class="row">
+      <%= f.label :two, 'Two Point Ave', class: 'form-actions' %>
+      <%= f.text_field :two %>
+    </div>
+    <div class="row">
+      <%= f.label :three, 'Three Point Ave', class: 'form-actions' %>
+      <%= f.text_field :three %>
+    </div>
+    <div class="row">
+      <%= f.label :free_throw, 'Free Throw Ave', class: 'form-actions' %>
+      <%= f.text_field :free_throw %>
+    </div>
+    <div class="row">
+      <%= f.label :assists, 'Assists', class: 'form-actions' %>
+      <%= f.text_field :assists %>
+    </div>
+    <div class="row">
+      <%= f.label :steals, 'Steals', class: 'form-actions' %>
+      <%= f.text_field :steals %>
+    </div>
+    <div class="row">
+      <%= f.label :turn_overs, 'Turn Overs', class: 'form-actions' %>
+      <%= f.text_field :turn_overs %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit 'Submit' %>
+    </div>
+  <% end %>
+</div>
