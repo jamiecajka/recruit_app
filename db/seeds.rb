@@ -173,7 +173,7 @@
 #     year_id: rand(1..4)
 #   )
 # end
-# 
+#
 # User.create(
 #   name: 'Jamie',
 #   email: 'jamiecajka@gmail.com',

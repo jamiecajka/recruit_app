@@ -10,14 +10,24 @@
   </head>
 
   <body>
-
-    <%= image_tag 'doane-logo.png', {class: 'logo-pic'} %>
-
-
-
-
-
-
+    <header>
+      <div class='sign_in_head'>
+        <%= image_tag 'doane-logo.png', {class: 'logo-pic'} %>
+        <% if user_signed_in? %>
+          <div class="grid-container">
+            <div class='grid-item'
+              <p><%= link_to "Sign Out", destroy_user_session_path, {method: :delete, class: 'more_links'} %></p>
+            </div>
+            <div class='grid-item'>
+              <p><%= link_to "Home", user_path(current_user), {class: 'more_links'} %></p>
+            </div>
+            <div class='grid-item'>
+              <p><%= link_to "Back", :back, {class: 'more_links'} %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </header>
     <%= notice %>
     <%= alert %>
     <%= yield %>
