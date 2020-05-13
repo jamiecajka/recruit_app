@@ -5,30 +5,54 @@ body {
   color: #f27820;
 }
 
+/* application_layout */
+
 .logo-pic {
   width: 100%;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.sign_in_head {
+  background: #333333;
+}
+
+/* applicants header */
 
 .basketball_pic {
   width: 100%;
 }
 
-.public_menu {
-  text-align: center;
-  color: #f27820;
+.applicants-header {
+  background: #191D20;
 }
+
+/* link formatting */
 
 .public_links {
   text-decoration: none;
-  text-shadow: 3px 3px black;
+  text-shadow: 3px 3px #181C1F;
   color: #f27820;
   font-size: 75px;
   font-family: 'Kaushan Script', cursive;
 }
 
-.wrapper {
-  text-align: center;
+.more_links {
+  text-decoration: none;
+  color: inherit;
+  font-size: 25px;
 }
+
+.user_links {
+  text-decoration: none;
+  font-size: 30px;
+  color: inherit;
+}
+
+/* font sizing */
 
 .form_header {
   font-size: 40px;
@@ -43,23 +67,22 @@ body {
   margin: 10px;
 }
 
-.more_links {
-  text-decoration: none;
-  color: inherit;
-  font-size: 25px;
+.public_menu h1 {
+  font-size: 45px;
+}
+
+/* allignment */
+
+.public_menu {
+  text-align: center;
+  color: #f27820;
+}
+
+.wrapper {
+  text-align: center;
 }
 
 .form-actions {
   padding-left: 25px;
   color: inherit;
-}
-
-.user_links {
-  text-decoration: none;
-  font-size: 30px;
-  color: inherit;
-}
-
-.public_menu h1 {
-  font-size: 45px;
 }
