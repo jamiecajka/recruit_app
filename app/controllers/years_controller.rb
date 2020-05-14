@@ -1,5 +1,4 @@
 class YearsController < ApplicationController
-  before_action :authorize_user
 
   def index
     @years = Year.all
@@ -7,6 +6,7 @@ class YearsController < ApplicationController
 
   def new
     @year = Year.new
+    @active_options = Year::OPTIONS
   end
 
   def create

@@ -1,0 +1,18 @@
+<div class='wrapper'>
+  <%= form_for @year do |f| %>
+    <div class="row">
+      <h1 class="form_header">Add a New Class</h1>
+    </div>
+    <div class="row">
+      <%= f.label :year, 'Year', class: 'form-actions' %>
+      <%= f.text_field :year %>
+    </div>
+    <div class="row">
+      <%= f.label :active, 'Active', class: 'form-actions' %>
+      <%= f.select :active, @active_options %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit 'Submit' %>
+    </div>
+  <% end %>
+</div>
