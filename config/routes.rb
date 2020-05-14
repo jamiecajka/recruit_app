@@ -52,6 +52,6 @@ Rails.application.routes.draw do
   resources :years, except: [:destroy]
   resources :schools, except: [:destroy]
   resources :positions, except: [:destroy]
-
+  resources :searches
 
 end
