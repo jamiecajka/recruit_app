@@ -1,5 +1,13 @@
 class RecruitsController < ApplicationController
-  before_action :authorize_user
+  def show
+    @recruit = Recruit.find(params[:id])
+    @school = @recruit.school
+    @year = @recruit.year
+    @funnel = @recruit.funnel
+    @position = @recruit.position
+    @cnotes = Cnotes.all
+    @mnotes = Mnote.all
+  end
 
   def index
     @recruits = Recruit.all

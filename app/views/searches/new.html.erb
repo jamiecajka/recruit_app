@@ -1,0 +1,20 @@
+<%= form_for @search do |s| %>
+
+  <%= s.label :year_id %>
+  <%= s.select :year_id, options_for_select(@years), :include_blank => true %>
+
+  <%= s.label :level %>
+  <%= s.select :level_id, options_for_select(@levels), :include_blank => true %>
+
+  <%= s.label :funnel %>
+  <%= s.select :funnel_id, options_for_select(@funnels), :include_blank => true %>
+
+  <%= s.label :position %>
+  <%= s.select :position_id, options_for_select(@positions), :include_blank => true %>
+
+  <%= s.label :recruit %>
+  <%= s.select :name, options_for_select(@recruit_name), :include_blank => true %>
+
+  <%= s.submit "Search" %>
+
+<% end %>

@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     resources :recruitfunnels
   end
 
+  resources :recruits, only: [:index] do
+      get 'search'
+  end
+
   resources :recruits, except: [:destroy] do
     resources :recruits
     resources :schools
@@ -58,5 +62,6 @@ Rails.application.routes.draw do
     resources :funnels
   end
 
+  resources :searches
 
 end

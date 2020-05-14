@@ -1,4 +1,5 @@
 class Recruit < ApplicationRecord
+
   belongs_to :school
   belongs_to :position
   belongs_to :level
