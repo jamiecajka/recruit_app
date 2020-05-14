@@ -82,6 +82,11 @@ body {
   text-align: center;
 }
 
+.index_header {
+  font-size: 40px;
+  color: #A4A4A4;
+}
+
 /* allignment */
 
 .public_menu {

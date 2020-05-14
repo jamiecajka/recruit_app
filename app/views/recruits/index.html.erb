@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="index_header">
+    <h3>Recruits from Past Classes</h3>
+  </div>
+  <% @recruits.each do |f| %>
+    <% if f.year.year < Time.new.year %>
+      <a href= <%= recruit_path(f.id) %> class='more_links'>
+        <h4 class='farrier-list'><%= f.name %> <br /></h4>
+      </a>
+    <% end %>
+  <% end %>
+</div>
