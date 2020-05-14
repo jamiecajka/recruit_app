@@ -1,12 +1,11 @@
 class SchoolsController < ApplicationController
-  before_action :authorize_user
 
   def index
     @schools = School.all
   end
 
   def new
-    @school = school.new
+    @school = School.new
   end
 
   def create
