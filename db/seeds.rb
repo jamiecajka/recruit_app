@@ -153,7 +153,8 @@
 #   Cnote.create(
 #     text: Faker::Hipster.paragraph,
 #     recruit_id: rand(1..30),
-#     user_id: rand(1..3)
+#     user_id: 4,
+#     date: Faker::Date.between(from: 2.years.ago, to: Date.today)
 #   )
 # end
 #
