@@ -13,7 +13,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
 }
 
 .sign_in_head {
@@ -71,6 +71,17 @@ body {
   font-size: 45px;
 }
 
+.recruit_name {
+  font-size: 50px;
+  text-align: center;
+}
+
+.recruit_info {
+  color: #A4A4A4;
+  font-size: 30px;
+  text-align: center;
+}
+
 /* allignment */
 
 .public_menu {
@@ -85,4 +96,31 @@ body {
 .form-actions {
   padding-left: 25px;
   color: inherit;
+}
+
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background: inherit;
+  color: inherit;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: solid 3px black;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
 }

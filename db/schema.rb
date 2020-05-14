@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_175529) do
+ActiveRecord::Schema.define(version: 2020_05_14_194151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_175529) do
     t.bigint "recruit_id", null: false
     t.bigint "user_id", null: false
     t.text "text", null: false
-    t.date "date", null: false
+    t.string "date", null: false
     t.index ["recruit_id"], name: "index_cnotes_on_recruit_id"
     t.index ["user_id"], name: "index_cnotes_on_user_id"
   end

@@ -5,7 +5,7 @@ class RecruitsController < ApplicationController
     @year = @recruit.year
     @funnel = @recruit.funnel
     @position = @recruit.position
-    @cnotes = Cnotes.all
+    @cnotes = Cnote.all
     @mnotes = Mnote.all
   end
 

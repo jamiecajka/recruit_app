@@ -1,0 +1,112 @@
+<div class="recruit_name">
+    <h1><%= @recruit.name %></h1>
+</div>
+<div class="recruit_info">
+  <div class="grid-container">
+    <h3>Class: <span style='color:#f27820'><%= @recruit.year.year %></span></h3>
+    <h3>Level: <span style='color:#f27820'><%= @recruit.level.name %></span></h3>
+  </div>
+  <div class="grid-container">
+  <h3>Funnel: <span style='color:#f27820'><%= @recruit.funnel.name %></span></h3>
+  <h3>Position: <span style='color:#f27820'><%= @recruit.position.name %></span></h3>
+  </div>
+</div>
+
+<button class="accordion">Recruit Info</button>
+<div class="panel">
+  <div class="recruit_info">
+    <div class="grid-container">
+      <h3>Address: <span style='color:#f27820'><%= @recruit.address %></span></h3>
+      <h3>City: <span style='color:#f27820'><%= @recruit.city %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>State: <span style='color:#f27820'><%= @recruit.state %></span></h3>
+      <h3>Zip: <span style='color:#f27820'><%= @recruit.zip %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>Phone: <span style='color:#f27820'><%= @recruit.phone %></span></h3>
+      <h3>Email: <span style='color:#f27820'><%= @recruit.email %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>Height: <span style='color:#f27820'><%= @recruit.height %></span></h3>
+      <h3>Basketball Scholarship Offer: $<span style='color:#f27820'><%= @recruit.basketball %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>School: <span style='color:#f27820'><%= link_to @recruit.school.name, school_path(@recruit.school.id), {class: 'more_links'} %></span></h3>
+      <h3>Academic Scholarship Offer: $<span style='color:#f27820'><%= @recruit.academic %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>GPA: <span style='color:#f27820'><%= @recruit.gpa %></span></h3>
+      <h3>ACT: <span style='color:#f27820'><%= @recruit.act %></span></h3>
+    </div>
+    <h3>Notes</h3>
+        <% @mnotes.each do |m| %>
+          <% if m.recruit.id === @recruit.id %>
+            <p><%= m.text %></p>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+
+<button class="accordion">Stats</button>
+<div class="panel">
+  <div class="recruit_info">
+    <div class="grid-container">
+      <h3>Minutes: <span style='color:#f27820'><%= @recruit.minutes %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>Offensive Rebounds: <span style='color:#f27820'><%= @recruit.o_rebound %></span></h3>
+      <h3>Deffensive Rebounds: <span style='color:#f27820'><%= @recruit.d_rebound %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>PPG: <span style='color:#f27820'><%= @recruit.ppg %></span></h3>
+      <h3>Two Points: <span style='color:#f27820'><%= @recruit.two %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>Three Points: <span style='color:#f27820'><%= @recruit.three %></span></h3>
+      <h3>Free Throws: <span style='color:#f27820'><%= @recruit.free_throw %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>Assists: <span style='color:#f27820'><%= @recruit.assists %></span></h3>
+      <h3>Steals: <span style='color:#f27820'><%= @recruit.steals %></span></h3>
+    </div>
+    <div class="grid-container">
+      <h3>Turn-Overs: <span style='color:#f27820'><%= @recruit.turn_overs %></span></h3>
+      <h3>Blocks: <span style='color:#f27820'><%= @recruit.blocks %></span></h3>
+    </div>
+  </div>
+</div>
+
+<button class="accordion">Coach's Notes</button>
+<div class="panel">
+  <div class="recruit_info">
+    <h3>Notes</h3>
+    <% @cnotes.each do |c| %>
+      <% if c.recruit.id === @recruit.id %>
+        <p><span style='color:#f27820'><%= c.date %>: <%= c.user.name %></span>
+        <p><%= c.text %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      /* Toggle between adding and removing the "active" class,
+      to highlight the button that controls the panel */
+      this.classList.toggle("active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
