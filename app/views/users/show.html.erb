@@ -2,7 +2,7 @@
    <br>
    <div class="public_menu">
      <h1>Hello <%= @user.name %>, what would you like to do?</h1>
-     <h2><%= link_to 'View Recruits', recruits_path, :class => 'user_links' %></h2>
+     <h2><%= link_to 'View Recruits', new_search_path, :class => 'user_links' %></h2>
      <h2><%= link_to 'Add Recruit', new_recruit_path, :class => 'user_links' %></h2>
      <h2><%= link_to 'View Applicants', applicants_path, :class => 'user_links' %></h2>
      <h2><%= link_to 'Add Contact Note', new_cnote_path, :class => 'user_links' %></h2>

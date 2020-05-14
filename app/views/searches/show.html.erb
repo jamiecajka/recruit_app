@@ -1,0 +1,13 @@
+<br><br><br>
+
+<% if @search.search_recruits.empty? %>
+  <p>No Records Found</p>
+<% else %>
+  <% @searchResults.in_groups_of(4,false).each do |group| %>
+  <% group.each do |p| %>
+    <a href= <%= recruit_path(p.id) %> class='more_links'>
+      <h4 ><%= p.name %></h4>
+    </a>
+    <% end %>
+    <% end %>
+<% end %>
