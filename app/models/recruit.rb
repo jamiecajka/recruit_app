@@ -1,10 +1,15 @@
 class Recruit < ApplicationRecord
+  OPTIONS = [
+    ['Recruit', 1],
+    ['Applicant', 2]
+  ]
 
   belongs_to :school
   belongs_to :position
   belongs_to :level
   belongs_to :funnel
   belongs_to :year
+  belongs_to :status
 
   has_many :cnotes
   has_many :mnotes

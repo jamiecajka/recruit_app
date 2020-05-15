@@ -1,5 +1,4 @@
 class RecruitfunnelsController < ApplicationController
-  before_action :authorize_user
 
   def index
     @recruitfunnels = Recruitfunnel.all

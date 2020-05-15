@@ -7,14 +7,17 @@ class RecruitsController < ApplicationController
     @position = @recruit.position
     @cnotes = Cnote.all
     @mnotes = Mnote.all
+    @status = @recruit.status
   end
 
   def index
-    @recruits = Recruit.all
+    @recruits = Recruit.where('status_id = 1')
+    @more_recruits = Recruit.where('status_id = 3')
   end
 
   def new
     @recruit = Recruit.new
+    @status_options = Recruit::OPTIONS
   end
 
   def create
@@ -73,7 +76,8 @@ class RecruitsController < ApplicationController
       :position,
       :funnel,
       :level,
-      :class
+      :year,
+      :status
     )
   end
 end

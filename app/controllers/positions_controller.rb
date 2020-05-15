@@ -1,5 +1,4 @@
 class PositionsController < ApplicationController
-  before_action :authorize_user
 
   def index
     @positions = Position.all

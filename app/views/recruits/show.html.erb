@@ -1,6 +1,12 @@
-<div class="recruit_name">
-    <h1><%= @recruit.name %></h1>
+<div class="recruit_top">
+  <div>
+    <h1, class="recruit_name"><%= @recruit.name%></h1>
+    </div>
+    <div>
+    <h3, class="recruit_status">Status: <span style='color:#f27820'><%= @recruit.status.status %></span></h3>
+  </div>
 </div>
+<br>
 <div class="recruit_info">
   <div class="grid-container">
     <h3>Class: <span style='color:#f27820'><%= @recruit.year.year %></span></h3>

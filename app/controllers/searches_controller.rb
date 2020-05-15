@@ -7,6 +7,7 @@ class SearchesController < ApplicationController
     @funnels = Funnel.all.collect { |f| [f.name, f.id]}
     @positions = Position.all.collect { |p| [p.name, p.id]}
     @recruit_name = Recruit.all.collect { |r| [r.name, r.id]}
+    @status_options = Status.where('id between 1 and 2').collect { |s| [s.status, s.id]}
   end
 
   def create
@@ -22,6 +23,6 @@ class SearchesController < ApplicationController
 
   private
   def search_params
-    params.require(:search).permit(:year_id, :level_id, :funnel_id, :position_id, :name)
+    params.require(:search).permit(:year_id, :level_id, :funnel_id, :position_id, :name, :status_id)
   end
 end
