@@ -33,6 +33,7 @@ class RecruitsController < ApplicationController
 
   def edit
     @recruit = Recruit.find(params[:id])
+    @status_options = Recruit::OPTIONS
   end
 
   def update

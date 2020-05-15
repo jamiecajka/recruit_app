@@ -22,6 +22,7 @@ class YearsController < ApplicationController
 
   def edit
     @year = Year.find(params[:id])
+    @active_options = Year::OPTIONS
   end
 
   def update

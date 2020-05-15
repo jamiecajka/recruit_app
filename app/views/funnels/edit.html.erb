@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+  <%= form_for @funnel do |f| %>
+    <% if @funnel.errors.any? %>
+      <div>
+        <h2><%= pluralize(@funnel.errors.count, "error") %> prohibited this note from being saved:</h2>
+        <ul>
+          <% @funnel.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class='wrapper'>
+      <div class="row">
+        <h1 class="form_header">Update Funnel</h1>
+      </div>
+      <div class="row">
+        <%= f.label :name, 'Name', class: 'form-actions' %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="form-actions">
+        <%= f.submit 'Update' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

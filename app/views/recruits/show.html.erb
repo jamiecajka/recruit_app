@@ -1,7 +1,10 @@
- <% if user_signed_in? %>
+<% if user_signed_in? %>
 <div class="recruit_top">
   <div>
     <h1, class="recruit_name"><%= @recruit.name%></h1>
+    <a href= <%= edit_recruit_path(params[:id]) %> class='more_links' >
+      <h4>Edit</h4>
+    </a>
     </div>
     <div>
     <h3, class="recruit_status">Status: <span style='color:#f27820'><%= @recruit.status.status %></span></h3>
@@ -49,6 +52,9 @@
     <h3>Notes</h3>
         <% @mnotes.each do |m| %>
           <% if m.recruit.id === @recruit.id %>
+            <a href= <%= edit_mnote_path(m.id) %> class='more_links' >
+              <h4>Edit</h4>
+            </a>
             <p><%= m.text %></p>
           <% end %>
         <% end %>
@@ -90,7 +96,10 @@
     <h3>Notes</h3>
     <% @cnotes.each do |c| %>
       <% if c.recruit.id === @recruit.id %>
-        <p><span style='color:#f27820'><%= c.date %>: <%= c.user.name %></span>
+        <p><span style='color:#f27820'><%= c.date %>: <%= c.user.name %></span> </p>
+        <a href= <%= edit_cnote_path(c.id) %> class='more_links' >
+          <h4>Edit</h4>
+        </a>
         <p><%= c.text %></p>
       <% end %>
     <% end %>
@@ -117,3 +126,4 @@
     });
   }
 </script>
+<% end %>

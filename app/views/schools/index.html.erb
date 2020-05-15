@@ -4,7 +4,7 @@
      <h3>Schools</h3>
    </div>
     <% @schools.each do |f| %>
-      <a href= <%= position_path(f.id) %> class='more_links' >
+      <a href= <%= school_path(f.id) %> class='more_links' >
         <h4><%= f.name %> - <%= f.city %>, <%= f.state %></h4>
       </a>
     <% end %>

@@ -22,6 +22,7 @@ class CnotesController < ApplicationController
 
   def edit
     @cnote = Cnote.find(params[:id])
+    @recruits = Recruit.where('status_id = 1').collect { |r| [r.name, r.id]}
   end
 
   def update
