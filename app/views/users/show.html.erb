@@ -1,16 +1,58 @@
  <% if user_signed_in? %>
    <br>
    <div class="public_menu">
-     <h1>Hello <%= @user.name %>, what would you like to do?</h1>
+     <div class="index_header">
+       <h1>Hello <%= @user.name %>, what would you like to do?</h1>
+     </div>
      <h2><%= link_to 'View Recruits', new_search_path, :class => 'user_links' %></h2>
      <h2><%= link_to 'Add Recruit', new_recruit_path, :class => 'user_links' %></h2>
-     <h2><%= link_to 'View Applicants', applicants_path, :class => 'user_links' %></h2>
      <h2><%= link_to 'Add Contact Note', new_cnote_path, :class => 'user_links' %></h2>
-     <h2><%= link_to 'View School Info', schools_path, :class => 'user_links' %></h2>
-     <h2><%= link_to 'View Positions', positions_path, :class => 'user_links' %></h2>
-     <h2><%= link_to 'Add Class', new_year_path, :class => 'user_links' %></h2>
-     <h2><%= link_to 'View Funnel Levels', funnels_path, :class => 'user_links' %></h2>
-     <h2><%= link_to 'View Team Levels', levels_path, :class => 'user_links' %></h2>
-     <h2><%= link_to 'Archive', recruits_path, :class => 'user_links' %></h2>
+     <h2><%= link_to 'Recruit Archive', recruits_path, :class => 'user_links' %></h2>
+     <button class="accordion">Add Non-Recruit Info</button>
+     <div class="panel">
+       <div class="recruit_info">
+         <h2><%= link_to 'Add Class', new_year_path, :class => 'user_links' %></h2>
+         <h2><%= link_to 'Add New School', new_school_path, :class => 'user_links' %></h2>
+         <h2><%= link_to 'Add New Position', new_position_path, :class => 'user_links' %></h2>
+         <h2><%= link_to 'Add New Funnel Level', new_funnel_path, :class => 'user_links' %></h2>
+         <h2><%= link_to 'Add New Team Level', new_level_path, :class => 'user_links' %></h2>
+       </div>
+     </div>
+     <button class="accordion">View Non-Recruit Info</button>
+     <div class="panel">
+       <div class="recruit_info">
+         <h2><%= link_to 'View School Info', schools_path, :class => 'user_links' %></h2>
+         <h2><%= link_to 'View Positions', positions_path, :class => 'user_links' %></h2>
+         <h2><%= link_to 'View Funnel Levels', funnels_path, :class => 'user_links' %></h2>
+         <h2><%= link_to 'View Team Levels', levels_path, :class => 'user_links' %></h2>
+       </div>
+     </div>
    </div>
 <% end %>
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      /* Toggle between adding and removing the "active" class,
+      to highlight the button that controls the panel */
+      this.classList.toggle("active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>

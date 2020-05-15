@@ -1,17 +1,19 @@
-<br><br><br>
-<div class="wrapper">
-  <div class="index_header">
-    <h3>Recruits</h3>
-  </div>
-  <% if @search.search_recruits.empty? %>
-    <p>No Records Found</p>
-  <% else %>
-    <% @searchResults.in_groups_of(4,false).each do |group| %>
-      <% group.each do |p| %>
-        <a href= <%= recruit_path(p.id) %> class='more_links'>
-          <h4 ><%= p.name %></h4>
-        </a>
+<% if user_signed_in? %>
+  <br><br><br>
+  <div class="wrapper">
+    <div class="index_header">
+      <h3>Recruits</h3>
+    </div>
+    <% if @search.search_recruits.empty? %>
+      <p>No Records Found</p>
+    <% else %>
+      <% @searchResults.in_groups_of(4,false).each do |group| %>
+        <% group.each do |p| %>
+          <a href= <%= recruit_path(p.id) %> class='more_links'>
+            <h4 ><%= p.name %></h4>
+          </a>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>

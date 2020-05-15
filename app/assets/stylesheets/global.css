@@ -121,7 +121,7 @@ body {
   cursor: pointer;
   padding: 18px;
   width: 100%;
-  text-align: left;
+  text-align: center;
   border: solid 3px black;
   outline: none;
   transition: 0.4s;
