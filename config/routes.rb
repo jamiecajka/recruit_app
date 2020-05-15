@@ -47,7 +47,7 @@ Rails.application.routes.draw do
 
   resources :levels, except: [:destroy]
   resources :funnels, except: [:destroy]
-  resources :years, except: [:destroy]
+  resources :years, except: [:destroy, :show]
   resources :schools, except: [:destroy]
   resources :positions, except: [:destroy]
   resources :searches

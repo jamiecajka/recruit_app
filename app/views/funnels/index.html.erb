@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+ <div class="wrapper">
+   <div class="index_header">
+     <h3>Funnel</h3>
+   </div>
+    <% @funnels.each do |f| %>
+      <a href= <%= edit_funnel_path(f.id) %> class='more_links' >
+        <h4><%= f.name %></h4>
+      </a>
+    <% end %>
+  </div>
+<% end %>
