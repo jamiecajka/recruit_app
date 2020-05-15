@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resources :levels
     resources :funnels
     resources :years
-    resources :applicants, only: [:index, :show]
     resources :recruitfunnels
   end
 
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
     resources :funnels, only: [:index, :show]
     resources :years, only: [:index, :show]
     resources :recruitfunnels, only: [:index, :show]
+    resources :statuses
   end
 
   resources :cnotes do
@@ -36,10 +36,8 @@ Rails.application.routes.draw do
     resources :recruits, only: [:index, :show]
   end
 
-  resources :applicants, except: [:destroy] do
-    resources :years, only: [:index, :show]
-    resources :positions, only: [:index, :show]
-    resources :schools, only: [:index, :new]
+  resources :applicants, only: [:index] do
+    resources :recruits, only: [:new]
   end
 
   resources :recruits_funnels do

@@ -158,10 +158,18 @@
 #   )
 # end
 #
+# User.create(
+#   name: 'Jamie',
+#   email: 'jamiecajka@gmail.com',
+#   encrypted_password: 'password',
+#   active: true
+# )
+#
 # 10.times do
-#   Applicant.create(
+#   Recruit.create(
 #     name: Faker::TvShows::GameOfThrones.character,
 #     gpa: Faker::Number.decimal(l_digits: 1, r_digits: 3),
+#     act: rand(20..36),
 #     height: Faker::Demographic.height,
 #     phone: Faker::PhoneNumber.cell_phone,
 #     email: Faker::Internet.email,
@@ -169,15 +177,58 @@
 #     city: Faker::TvShows::GameOfThrones.city,
 #     state: Faker::Address.state_abbr,
 #     zip: Faker::Address.zip,
+#     basketball: 0,
+#     academic: 0,
+#     ppg: 0,
+#     o_rebound: 0,
+#     d_rebound: 0,
+#     two: 0,
+#     three: 0,
+#     free_throw: 0,
+#     assists: 0,
+#     steals: 0,
+#     turn_overs: 0,
+#     blocks: 0,
+#     minutes: 0,
 #     school_id: rand(1..10),
+#     level_id: rand(1..3),
 #     position_id: rand(1..5),
-#     year_id: rand(1..4)
+#     year_id: rand(1..4),
+#     funnel_id: rand(1..6),
+#     status: 'Applicant'
 #   )
 # end
 #
-# User.create(
-#   name: 'Jamie',
-#   email: 'jamiecajka@gmail.com',
-#   encrypted_password: 'password',
-#   active: true
-# )
+# 10.times do
+#   Recruit.create(
+#     name: Faker::TvShows::GameOfThrones.character,
+#     gpa: Faker::Number.decimal(l_digits: 1, r_digits: 3),
+#     act: rand(20..36),
+#     height: Faker::Demographic.height,
+#     phone: Faker::PhoneNumber.cell_phone,
+#     email: Faker::Internet.email,
+#     address: Faker::Address.street_address,
+#     city: Faker::TvShows::GameOfThrones.city,
+#     state: Faker::Address.state_abbr,
+#     zip: Faker::Address.zip,
+#     basketball: 0,
+#     academic: 0,
+#     ppg: 0,
+#     o_rebound: 0,
+#     d_rebound: 0,
+#     two: 0,
+#     three: 0,
+#     free_throw: 0,
+#     assists: 0,
+#     steals: 0,
+#     turn_overs: 0,
+#     blocks: 0,
+#     minutes: 0,
+#     school_id: rand(1..10),
+#     level_id: rand(1..3),
+#     position_id: rand(1..5),
+#     year_id: rand(1..4),
+#     funnel_id: rand(1..6),
+#     status: 'Rejected'
+#   )
+# end

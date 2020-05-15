@@ -25,11 +25,11 @@
       </div>
       <div class="row">
         <%= f.label :level_id, 'Level *', class: 'form-actions' %>
-        <%= f.select :level_id, Level.all.collect { |p| [p.name, p.id] } %>
+        <%= f.select :level_id, Level.all.collect { |l| [l.name, l.id] } %>
       </div>
       <div class="row">
         <%= f.label :funnel_id, 'Funnel *', class: 'form-actions' %>
-        <%= f.select :funnel_id, Funnel.all.collect { |p| [p.name, p.id] } %>
+        <%= f.select :funnel_id, Funnel.all.collect { |f| [f.name, f.id] } %>
       </div>
       <div class="row">
       <%= f.label :name, 'Full Name *', class: 'form-actions' %>
@@ -122,6 +122,12 @@
       <%= f.label :turn_overs, 'Turn Overs', class: 'form-actions' %>
       <%= f.text_field :turn_overs %>
     </div>
+    <% if user_signed_in? %>
+      <div class="row">
+        <%= f.label :status_id, 'Status', class: 'form-actions' %>
+        <%= f.select :status_id, @status_options %>
+      </div>
+    <% end %>
     <div class="form-actions">
       <%= f.submit 'Submit' %>
     </div>

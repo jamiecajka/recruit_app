@@ -1,0 +1,2 @@
+class StausesController < ApplicationController
+end

@@ -10,41 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_194151) do
+ActiveRecord::Schema.define(version: 2020_05_15_171647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "applicants", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "gpa", null: false
-    t.integer "act"
-    t.string "height", null: false
-    t.string "phone", null: false
-    t.string "email", null: false
-    t.string "address", null: false
-    t.string "city", null: false
-    t.string "state", null: false
-    t.string "zip", null: false
-    t.string "ppg"
-    t.string "o_rebound"
-    t.string "d_rebound"
-    t.string "two"
-    t.string "three"
-    t.string "free_throw"
-    t.string "assists"
-    t.string "steals"
-    t.string "turn_overs"
-    t.string "blocks"
-    t.string "minutes"
-    t.string "status", default: "pending", null: false
-    t.bigint "school_id", null: false
-    t.bigint "position_id", null: false
-    t.bigint "year_id", null: false
-    t.index ["position_id"], name: "index_applicants_on_position_id"
-    t.index ["school_id"], name: "index_applicants_on_school_id"
-    t.index ["year_id"], name: "index_applicants_on_year_id"
-  end
 
   create_table "cnotes", force: :cascade do |t|
     t.bigint "recruit_id", null: false
@@ -110,10 +79,12 @@ ActiveRecord::Schema.define(version: 2020_05_14_194151) do
     t.bigint "funnel_id", null: false
     t.bigint "level_id", null: false
     t.bigint "year_id", null: false
+    t.bigint "status_id"
     t.index ["funnel_id"], name: "index_recruits_on_funnel_id"
     t.index ["level_id"], name: "index_recruits_on_level_id"
     t.index ["position_id"], name: "index_recruits_on_position_id"
     t.index ["school_id"], name: "index_recruits_on_school_id"
+    t.index ["status_id"], name: "index_recruits_on_status_id"
     t.index ["year_id"], name: "index_recruits_on_year_id"
   end
 
@@ -135,33 +106,11 @@ ActiveRecord::Schema.define(version: 2020_05_14_194151) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.bigint "status_id"
   end
 
-  create_table "taggings", id: :serial, force: :cascade do |t|
-    t.integer "tag_id"
-    t.string "taggable_type"
-    t.integer "taggable_id"
-    t.string "tagger_type"
-    t.integer "tagger_id"
-    t.string "context", limit: 128
-    t.datetime "created_at"
-    t.index ["context"], name: "index_taggings_on_context"
-    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-    t.index ["tag_id"], name: "index_taggings_on_tag_id"
-    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
-    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
-    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
-    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
-    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
-    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
-  end
-
-  create_table "tags", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
+  create_table "statuses", force: :cascade do |t|
+    t.string "status", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -185,5 +134,4 @@ ActiveRecord::Schema.define(version: 2020_05_14_194151) do
     t.boolean "active", null: false
   end
 
-  add_foreign_key "taggings", "tags"
 end

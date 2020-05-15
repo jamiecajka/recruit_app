@@ -71,11 +71,6 @@ body {
   font-size: 45px;
 }
 
-.recruit_name {
-  font-size: 50px;
-  text-align: center;
-}
-
 .recruit_info {
   color: #A4A4A4;
   font-size: 30px;
@@ -84,6 +79,11 @@ body {
 
 .index_header {
   font-size: 40px;
+  color: #A4A4A4;
+}
+
+.recruit_status {
+  font-size: 30px;
   color: #A4A4A4;
 }
 
@@ -101,6 +101,15 @@ body {
 .form-actions {
   padding-left: 25px;
   color: inherit;
+}
+
+.recruit_name {
+  padding: 0px;
+  font-size: 75px;
+}
+
+.recruit_top {
+  text-align: center;
 }
 
 

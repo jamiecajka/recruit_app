@@ -5,8 +5,19 @@
   <% @recruits.each do |f| %>
     <% if f.year.year < Time.new.year %>
       <a href= <%= recruit_path(f.id) %> class='more_links'>
-        <h4 class='farrier-list'><%= f.name %> <br /></h4>
+        <h4><%= f.name %> <br /></h4>
       </a>
     <% end %>
+  <% end %>
+</div>
+
+<div class="wrapper">
+  <div class="index_header">
+    <h3>Rejected Applicants</h3>
+  </div>
+  <% @more_recruits.each do |r| %>
+      <a href= <%= recruit_path(r.id) %> class='more_links'>
+        <h4><%= r.name %> <br /></h4>
+      </a>
   <% end %>
 </div>

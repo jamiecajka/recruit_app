@@ -1,5 +1,4 @@
 class MnotesController < ApplicationController
-  before_action :authorize_user
 
   def index
     @mnotes = Mnote.all
