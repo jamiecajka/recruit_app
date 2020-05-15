@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+  <%= form_for @year do |f| %>
+    <% if @year.errors.any? %>
+      <div>
+        <h2><%= pluralize(@year.errors.count, "error") %> prohibited this note from being saved:</h2>
+        <ul>
+          <% @year.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class='wrapper'>
+      <div class="row">
+        <h1 class="form_header">Update Class</h1>
+      </div>
+      <div class="row">
+        <%= f.label :name, 'Year', class: 'form-actions' %>
+        <%= f.text_field :year %>
+      </div>
+      <div class="row">
+        <%= f.label :active, 'Active', class: 'form-actions' %>
+        <%= f.select :active, @active_options %>
+      </div>
+      <div class="form-actions">
+        <%= f.submit 'Update' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

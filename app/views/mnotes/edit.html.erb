@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+  <%= form_for @mnote do |f| %>
+    <% if @mnote.errors.any? %>
+      <div>
+        <h2><%= pluralize(@mnote.errors.count, "error") %> prohibited this note from being saved:</h2>
+        <ul>
+          <% @mnote.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class='wrapper'>
+      <div class="row">
+        <h1 class="form_header">Update Note</h1>
+      </div>
+      <div class="row">
+        <%= f.label :recruit_id, 'Recruit', class: 'form-actions' %>
+        <%= f.select :recruit_id, options_for_select(@recruits) %>
+      </div>
+      <div class="row">
+        <%= f.label :text, 'Note', class: 'form-actions' %>
+        <%= f.text_area :text, cols: "50", rows: "25" %>
+      </div>
+      <div class="form-actions">
+        <%= f.submit 'Update' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

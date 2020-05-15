@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <div class="recruit_top">
+    <div>
+      <h1, class="recruit_name"><%= @school.name%></h1>
+      <a href= <%= edit_school_path(params[:id]) %> class='more_links' >
+        <h4>Edit</h4>
+      </a>
+    </div>
+  </div>
+  <br>
+  <div class="recruit_info">
+    <h3>Address: <span style='color:#f27820'><%= @school.address %></span></h3>
+    <h3>City: <span style='color:#f27820'><%= @school.city %></span></h3>
+    <h3>State: <span style='color:#f27820'><%= @school.state %></span></h3>
+    <h3>Zip: <span style='color:#f27820'><%= @school.zip %></span></h3>
+    <h3>Coach: <span style='color:#f27820'><%= @school.coach %></span></h3>
+    <h3>Phone: <span style='color:#f27820'><%= @school.phone %></span></h3>
+  </div>
+<% end %>
