@@ -1,5 +1,5 @@
 class YearsController < ApplicationController
-
+  before_action :authorize_user, except: [:new, :create]
   def index
     @years = Year.all
   end
@@ -42,5 +42,11 @@ class YearsController < ApplicationController
       :year,
       :active
     )
+  end
+
+  def authorize_user
+    if !current_user.coach?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end

@@ -1,5 +1,5 @@
 class PositionsController < ApplicationController
-
+  before_action :authorize_user
   def index
     @positions = Position.all
   end
@@ -39,5 +39,11 @@ class PositionsController < ApplicationController
     params.require(:position).permit(
       :name
     )
+  end
+
+  def authorize_user
+    if !current_user.coach?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end

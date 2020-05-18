@@ -20,18 +20,6 @@
         <h3><%= link_to 'If the class is not listed, click here to add', new_year_path, :class=>'more_links'  %></h3>
       </div>
       <div class="row">
-        <%= f.label :position_id, 'Position *', class: 'form-actions' %>
-        <%= f.select :position_id, Position.all.collect { |p| [p.name, p.id] } %>
-      </div>
-      <div class="row">
-        <%= f.label :level_id, 'Level *', class: 'form-actions' %>
-        <%= f.select :level_id, Level.all.collect { |l| [l.name, l.id] } %>
-      </div>
-      <div class="row">
-        <%= f.label :funnel_id, 'Funnel *', class: 'form-actions' %>
-        <%= f.select :funnel_id, Funnel.all.collect { |f| [f.name, f.id] } %>
-      </div>
-      <div class="row">
       <%= f.label :name, 'Full Name *', class: 'form-actions' %>
       <%= f.text_field :name, required: true %>
     </div>
@@ -71,13 +59,27 @@
       <%= f.label :act, 'ACT Score', class: 'form-actions' %>
       <%= f.text_field :act %>
     </div>
+    <% if user_signed_in? %>
+      <div class="row">
+        <%= f.label :academic, 'Academic Scholarship awarded, if applicable', class: 'form-actions' %>
+        <%= f.text_field :academic %>
+      </div>
+      <div class="row">
+        <%= f.label :basketball, 'Basketball Scholarship awarded, if applicable', class: 'form-actions' %>
+        <%= f.text_field :basketball %>
+      </div>
+      <div class="row">
+        <%= f.label :level_id, 'Level *', class: 'form-actions' %>
+        <%= f.select :level_id, Level.all.collect { |l| [l.name, l.id] } %>
+      </div>
+      <div class="row">
+        <%= f.label :funnel_id, 'Funnel *', class: 'form-actions' %>
+        <%= f.select :funnel_id, Funnel.all.collect { |f| [f.name, f.id] } %>
+      </div>
+    <% end %>
     <div class="row">
-      <%= f.label :academic, 'Academic Scholarship awarded, if applicable', class: 'form-actions' %>
-      <%= f.text_field :academic %>
-    </div>
-    <div class="row">
-      <%= f.label :basketball, 'Basketball Scholarship awarded, if applicable', class: 'form-actions' %>
-      <%= f.text_field :basketball %>
+      <%= f.label :position_id, 'Position *', class: 'form-actions' %>
+      <%= f.select :position_id, Position.all.collect { |p| [p.name, p.id] } %>
     </div>
     <div class="middle_info">
       <h3>If known, enter player stats, otherwise they will default to '0' in the system</h3>

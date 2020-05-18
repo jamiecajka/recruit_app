@@ -7,5 +7,8 @@ class User < ApplicationRecord
   validates :active, presence: true
   validates :email, presence: true
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create
-  
+
+  def coach?
+    key == 'LC6y-;{$J:Gp<E*v'
+  end
 end

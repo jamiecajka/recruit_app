@@ -1,5 +1,5 @@
 class LevelsController < ApplicationController
-
+  before_action :authorize_user
   def index
     @levels = Level.all
   end
@@ -39,5 +39,11 @@ class LevelsController < ApplicationController
     params.require(:level).permit(
       :name
     )
+  end
+
+  def authorize_user
+    if !current_user.coach?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end

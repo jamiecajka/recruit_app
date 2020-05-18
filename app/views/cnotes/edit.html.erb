@@ -1,34 +1,32 @@
-<% if user_signed_in? %>
-  <%= form_for @cnote do |f| %>
-    <% if @cnote.errors.any? %>
-      <div>
-        <h2><%= pluralize(@cnote.errors.count, "error") %> prohibited this note from being saved:</h2>
-        <ul>
-          <% @cnote.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <div class='wrapper'>
-      <div class="row">
-        <h1 class="form_header">Update Note</h1>
-      </div>
-      <div class="row">
-        <%= f.label :recruit_id, 'Recruit', class: 'form-actions' %>
-        <%= f.select :recruit_id, options_for_select(@recruits) %>
-      </div>
-      <div class="row">
-        <%= f.label :date, 'Date', class: 'form-actions' %>
-        <%= f.date_field :date %>
-      </div>
-      <div class="row">
-        <%= f.label :text, 'Note', class: 'form-actions' %>
-        <%= f.text_area :text, cols: "50", rows: "25" %>
-      </div>
-      <div class="form-actions">
-        <%= f.submit 'Update' %>
-      </div>
+<%= form_for @cnote do |f| %>
+  <% if @cnote.errors.any? %>
+    <div>
+      <h2><%= pluralize(@cnote.errors.count, "error") %> prohibited this note from being saved:</h2>
+      <ul>
+        <% @cnote.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
+  <div class='wrapper'>
+    <div class="row">
+      <h1 class="form_header">Update Note</h1>
+    </div>
+    <div class="row">
+      <%= f.label :recruit_id, 'Recruit', class: 'form-actions' %>
+      <%= f.select :recruit_id, options_for_select(@recruits) %>
+    </div>
+    <div class="row">
+      <%= f.label :date, 'Date', class: 'form-actions' %>
+      <%= f.date_field :date %>
+    </div>
+    <div class="row">
+      <%= f.label :text, 'Note', class: 'form-actions' %>
+      <%= f.text_area :text, cols: "50", rows: "25" %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit 'Update' %>
+    </div>
+  </div>
 <% end %>

@@ -1,5 +1,5 @@
 class FunnelsController < ApplicationController
-
+  before_action :authorize_user
   def index
     @funnels = Funnel.all
   end
@@ -39,5 +39,11 @@ class FunnelsController < ApplicationController
     params.require(:funnel).permit(
       :name
     )
+  end
+
+  def authorize_user
+    if !current_user.coach?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end

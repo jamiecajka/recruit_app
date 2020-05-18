@@ -25,4 +25,10 @@ class SearchesController < ApplicationController
   def search_params
     params.require(:search).permit(:year_id, :level_id, :funnel_id, :position_id, :name, :status_id)
   end
+
+  def authorize_user
+    if !current_user.coach?
+      raise ActionController::RoutingError.new("Not Found")
+    end
+  end
 end
