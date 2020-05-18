@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-
+  before_action :authorize_user
   def new
     @search = Search.new
     @years = Year.where('active = true').collect { |y| [y.year, y.id]}

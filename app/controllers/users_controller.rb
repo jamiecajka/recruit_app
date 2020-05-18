@@ -43,7 +43,8 @@ class UsersController < ApplicationController
       :name,
       :email,
       :encrypted_password,
-      :active
+      :active,
+      :key
     )
   end
 end
