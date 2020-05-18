@@ -1,50 +1,48 @@
-<% if user_signed_in? %>
-  <%= form_for @school do |f| %>
-    <% if @school.errors.any? %>
-      <div>
-        <h2><%= pluralize(@school.errors.count, "error") %> prohibited this note from being saved:</h2>
-        <ul>
-          <% @school.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <div class='wrapper'>
-      <div class="row">
-        <h1 class="form_header">Update School</h1>
-      </div>
-        <div class="row">
-          <%= f.label :name, 'School Name', class: 'form-actions' %>
-          <%= f.text_field :name, required: true %>
-        </div>
-        <div class="row">
-        <%= f.label :address, 'Address', class: 'form-actions' %>
-        <%= f.text_field :address %>
-      </div>
-      <div class="row">
-        <%= f.label :city, 'City', class: 'form-actions' %>
-        <%= f.text_field :city, required: true %>
-      </div>
-      <div class="row">
-        <%= f.label :state, 'State', class: 'form-actions' %>
-        <%= f.text_field :state, required: true %>
-      </div>
-      <div class="row">
-        <%= f.label :zip, 'Zip Code', class: 'form-actions' %>
-        <%= f.text_field :zip, required: true %>
-      </div>
-      <div class="row">
-        <%= f.label :coach, 'Head Coach', class: 'form-actions' %>
-        <%= f.text_field :coach, required: true %>
-      </div>
-      <div class="row">
-        <%= f.label :phone, 'Phone', class: 'form-actions' %>
-        <%= f.text_field :phone, required: true %>
-      </div>
-      <div class="form-actions">
-        <%= f.submit 'Update' %>
-      </div>
+<%= form_for @school do |f| %>
+  <% if @school.errors.any? %>
+    <div>
+      <h2><%= pluralize(@school.errors.count, "error") %> prohibited this note from being saved:</h2>
+      <ul>
+        <% @school.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
+  <div class='wrapper'>
+    <div class="row">
+      <h1 class="form_header">Update School</h1>
+    </div>
+      <div class="row">
+        <%= f.label :name, 'School Name', class: 'form-actions' %>
+        <%= f.text_field :name, required: true %>
+      </div>
+      <div class="row">
+      <%= f.label :address, 'Address', class: 'form-actions' %>
+      <%= f.text_field :address %>
+    </div>
+    <div class="row">
+      <%= f.label :city, 'City', class: 'form-actions' %>
+      <%= f.text_field :city, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :state, 'State', class: 'form-actions' %>
+      <%= f.text_field :state, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :zip, 'Zip Code', class: 'form-actions' %>
+      <%= f.text_field :zip, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :coach, 'Head Coach', class: 'form-actions' %>
+      <%= f.text_field :coach, required: true %>
+    </div>
+    <div class="row">
+      <%= f.label :phone, 'Phone', class: 'form-actions' %>
+      <%= f.text_field :phone, required: true %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit 'Update' %>
+    </div>
+  </div>
 <% end %>

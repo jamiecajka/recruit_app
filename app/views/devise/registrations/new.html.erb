@@ -22,6 +22,11 @@
     <%= f.input :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :key %> <i>(if you have a key, please enter)</i><br />
+    <%= f.key :key %>
+  </div>
+
   <div class="actions">
     <%= f.button :submit, "Sign up" %>
   </div>

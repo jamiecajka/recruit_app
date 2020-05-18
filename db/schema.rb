@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_171647) do
+ActiveRecord::Schema.define(version: 2020_05_18_150533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 2020_05_15_171647) do
     t.string "minutes", null: false
     t.bigint "school_id", null: false
     t.bigint "position_id", null: false
-    t.bigint "funnel_id", null: false
-    t.bigint "level_id", null: false
+    t.bigint "funnel_id", default: 1, null: false
+    t.bigint "level_id"
     t.bigint "year_id", null: false
     t.bigint "status_id"
     t.index ["funnel_id"], name: "index_recruits_on_funnel_id"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_171647) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.string "key", default: ""
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

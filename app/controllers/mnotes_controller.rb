@@ -1,5 +1,5 @@
 class MnotesController < ApplicationController
-
+  before_action :authorize_user
   def index
     @mnotes = Mnote.all
   end
@@ -42,5 +42,11 @@ class MnotesController < ApplicationController
       :text,
       :recruit
     )
+  end
+
+  def authorize_user
+    if !current_user.coach?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end

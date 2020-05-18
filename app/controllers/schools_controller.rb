@@ -1,4 +1,5 @@
 class SchoolsController < ApplicationController
+  before_action :authorize_user, except: [:new, :create]
   def show
     @school = School.find(params[:id])
   end
@@ -48,5 +49,11 @@ class SchoolsController < ApplicationController
       :coach,
       :phone
     )
+  end
+
+  def authorize_user
+    if !current_user.coach?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end
