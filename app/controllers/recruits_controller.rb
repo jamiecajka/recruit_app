@@ -46,6 +46,14 @@ class RecruitsController < ApplicationController
    end
  end
 
+ def destroy
+    @recruit = Recruit.find(params[:id])
+    if @recruit.destroy
+      flash[:notice] = 'Recruit has been deleted.'
+      redirect_to user_path(current_user)
+    end
+  end
+
   private
 
   def recruit_params

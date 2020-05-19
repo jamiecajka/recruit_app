@@ -37,6 +37,14 @@ class SchoolsController < ApplicationController
    end
  end
 
+ def destroy
+    @school = School.find(params[:id])
+    if @school.destroy
+      flash[:notice] = 'School has been deleted.'
+      redirect_to user_path(current_user)
+    end
+  end
+
   private
 
   def school_params

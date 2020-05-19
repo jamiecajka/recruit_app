@@ -12,7 +12,7 @@ class PositionsController < ApplicationController
     @position = Position.new(position_params)
     if @position.save
       flash[:notice] = "New Position Added!"
-      redirect_to current_user_path
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "New Position Not Created"
       render :new
@@ -27,11 +27,19 @@ class PositionsController < ApplicationController
    @position = Position.find(params[:id])
    if @position.update_attributes(position_params)
      flash[:notice] = "Position Updated!"
-     redirect_to @position
+     redirect_to user_path(current_user)
    else
      render 'edit'
    end
  end
+
+ def destroy
+    @position = Position.find(params[:id])
+    if @position.destroy
+      flash[:notice] = 'Position has been deleted.'
+      redirect_to user_path(current_user)
+    end
+  end
 
   private
 

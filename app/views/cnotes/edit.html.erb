@@ -27,6 +27,7 @@
     </div>
     <div class="form-actions">
       <%= f.submit 'Update' %>
+      <p><%= link_to "Delete Note", cnote_path(@cnote.id), data: { confirm: "Are you sure?" }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>
 <% end %>

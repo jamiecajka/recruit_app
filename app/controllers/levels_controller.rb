@@ -12,7 +12,7 @@ class LevelsController < ApplicationController
     @level = Level.new(level_params)
     if @level.save
       flash[:notice] = "New Level Added!"
-      redirect_to current_user_path
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "New Level Not Created"
       render :new
@@ -27,11 +27,19 @@ class LevelsController < ApplicationController
    @level = Level.find(params[:id])
    if @level.update_attributes(level_params)
      flash[:notice] = "Level Updated!"
-     redirect_to @level
+     redirect_to user_path(current_user)
    else
      render 'edit'
    end
  end
+
+ def destroy
+    @level = Level.find(params[:id])
+    if @level.destroy
+      flash[:notice] = 'Level has been deleted.'
+      redirect_to user_path(current_user)
+    end
+  end
 
   private
 
