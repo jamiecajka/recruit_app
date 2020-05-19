@@ -19,6 +19,7 @@
     </div>
     <div class="form-actions">
       <%= f.submit 'Update' %>
+      <p><%= link_to "Delete Position", position_path(@position.id), data: { confirm: "Are you sure? Position item should only be deleted if it is a duplicate" }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>
 <% end %>

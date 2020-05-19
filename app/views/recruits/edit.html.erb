@@ -127,6 +127,7 @@
     </div>
     <div class="form-actions">
       <%= f.submit 'Update' %>
+      <p><%= link_to "Delete Recruit", recruit_path(@recruit.id), data: { confirm: "Are you sure? Recruit should only be deleted if it is a duplicate. If not a duplicate, set status to either Expired or Rejected" }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>
 <% end %>

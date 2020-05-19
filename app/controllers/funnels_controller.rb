@@ -12,7 +12,7 @@ class FunnelsController < ApplicationController
     @funnel = Funnel.new(funnel_params)
     if @funnel.save
       flash[:notice] = "New Funnel Added!"
-      redirect_to current_user_path
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "New Funnel Not Created"
       render :new
@@ -27,11 +27,19 @@ class FunnelsController < ApplicationController
    @funnel = Funnel.find(params[:id])
    if @funnel.update_attributes(funnel_params)
      flash[:notice] = "Funnel Updated!"
-     redirect_to @funnel
+     redirect_to user_path(current_user)
    else
      render 'edit'
    end
  end
+
+ def destroy
+    @funnel = Funnel.find(params[:id])
+    if @funnel.destroy
+      flash[:notice] = 'Funnel has been deleted.'
+      redirect_to user_path(current_user)
+    end
+  end
 
   private
 

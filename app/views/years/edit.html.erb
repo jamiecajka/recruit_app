@@ -23,6 +23,7 @@
     </div>
     <div class="form-actions">
       <%= f.submit 'Update' %>
+      <p><%= link_to "Delete Year", year_path(@year.id), data: { confirm: "Are you sure? Years should only be deleted if it is a duplicate" }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>
 <% end %>

@@ -13,7 +13,7 @@ class YearsController < ApplicationController
     @year = Year.new(year_params)
     if @year.save
       flash[:notice] = "New Class Added!"
-      redirect_to current_user_path
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "New Class Not Created"
       render :new
@@ -29,11 +29,19 @@ class YearsController < ApplicationController
    @year = Year.find(params[:id])
    if @year.update_attributes(year_params)
      flash[:notice] = "Class Updated!"
-     redirect_to @year
+     redirect_to user_path(current_user)
    else
      render 'edit'
    end
  end
+
+ def destroy
+    @year = Year.find(params[:id])
+    if @year.destroy
+      flash[:notice] = 'Class has been deleted.'
+      redirect_to user_path(current_user)
+    end
+  end
 
   private
 

@@ -1,6 +1,6 @@
 class MnotesController < ApplicationController
   before_action :authorize_user
-  
+
   def show
     @mnote = Mnote.find(params[:id])
     @recruit = @mnote.recruit
@@ -39,6 +39,14 @@ class MnotesController < ApplicationController
      render 'edit'
    end
  end
+
+ def destroy
+    @mnote = Mnote.find(params[:id])
+    if @mnote.destroy
+      flash[:notice] = 'Note has been deleted.'
+      redirect_to user_path(current_user)
+    end
+  end
 
   private
 

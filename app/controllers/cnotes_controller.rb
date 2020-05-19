@@ -41,6 +41,14 @@ class CnotesController < ApplicationController
    end
  end
 
+ def destroy
+    @cnote = Cnote.find(params[:id])
+    if @cnote.destroy
+      flash[:notice] = 'Note has been deleted.'
+      redirect_to user_path(current_user)
+    end
+  end
+
   private
 
   def cnote_params

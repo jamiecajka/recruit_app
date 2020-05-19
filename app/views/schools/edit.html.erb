@@ -43,6 +43,7 @@
     </div>
     <div class="form-actions">
       <%= f.submit 'Update' %>
+      <p><%= link_to "Delete School", school_path(@school.id), data: { confirm: "Are you sure? Schools should only be deleted if it is a duplicate. Before deleting, make sure no recruits/applicants are using this school." }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>
 <% end %>
