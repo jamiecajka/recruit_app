@@ -1,5 +1,11 @@
 class MnotesController < ApplicationController
   before_action :authorize_user
+  
+  def show
+    @mnote = Mnote.find(params[:id])
+    @recruit = @mnote.recruit
+  end
+
   def index
     @mnotes = Mnote.all
   end

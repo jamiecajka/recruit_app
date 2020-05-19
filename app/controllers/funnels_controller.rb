@@ -12,7 +12,7 @@ class FunnelsController < ApplicationController
     @funnel = Funnel.new(funnel_params)
     if @funnel.save
       flash[:notice] = "New Funnel Added!"
-      redirect_to @funnel
+      redirect_to current_user_path
     else
       flash[:alert] = "New Funnel Not Created"
       render :new

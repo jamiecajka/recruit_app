@@ -12,7 +12,7 @@ class LevelsController < ApplicationController
     @level = Level.new(level_params)
     if @level.save
       flash[:notice] = "New Level Added!"
-      redirect_to @level
+      redirect_to current_user_path
     else
       flash[:alert] = "New Level Not Created"
       render :new
