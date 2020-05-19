@@ -2,11 +2,12 @@ class CnotesController < ApplicationController
   before_action :authorize_user
   def index
     @cnotes = Cnote.all
+    @users = User.all
+    @recruits = Recruit.all
   end
 
   def new
     @cnote = Cnote.new
-    @recruits = Recruit.where('status_id = 1').collect { |r| [r.name, r.id]}
   end
 
   def create
@@ -40,8 +41,8 @@ class CnotesController < ApplicationController
   def cnote_params
     params.require(:cnote).permit(
       :text,
-      :user,
-      :recruit,
+      :user_id,
+      :recruit_id,
       :date
     )
   end

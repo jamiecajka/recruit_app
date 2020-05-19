@@ -12,13 +12,12 @@ class RecruitsController < ApplicationController
   end
 
   def index
-    @recruits = Recruit.where('status_id = 1')
+    @recruits = Recruit.where('status_id = 4')
     @more_recruits = Recruit.where('status_id = 3')
   end
 
   def new
     @recruit = Recruit.new
-    @status_options = Recruit::OPTIONS
   end
 
   def create
@@ -78,8 +77,12 @@ class RecruitsController < ApplicationController
       :position,
       :funnel,
       :level,
-      :year,
-      :status
+      :year_id,
+      :status_id,
+      :school_id,
+      :funnel_id,
+      :position_id,
+      :level_id
     )
   end
 

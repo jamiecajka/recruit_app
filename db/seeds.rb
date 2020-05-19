@@ -137,8 +137,9 @@
 #     school_id: rand(1..10),
 #     level_id: rand(1..3),
 #     position_id: rand(1..5),
-#     year_id: rand(1..4),
-#     funnel_id: rand(1..6)
+#     year_id: rand(2..6),
+#     funnel_id: rand(1..6),
+#     status_id: 1
 #   )
 # end
 #
@@ -191,11 +192,45 @@
 #     blocks: 0,
 #     minutes: 0,
 #     school_id: rand(1..10),
-#     level_id: rand(1..3),
+#     level_id: 1,
 #     position_id: rand(1..5),
-#     year_id: rand(1..4),
-#     funnel_id: rand(1..6),
-#     status: 'Applicant'
+#     year_id: rand(2..6),
+#     funnel_id: 1,
+#     status_id: 2
+#   )
+# end
+#
+# 10.times do
+#   Recruit.create(
+#     name: Faker::TvShows::GameOfThrones.character,
+#     gpa: Faker::Number.decimal(l_digits: 1, r_digits: 3),
+#     act: rand(20..36),
+#     height: Faker::Demographic.height,
+#     phone: Faker::PhoneNumber.cell_phone,
+#     email: Faker::Internet.email,
+#     address: Faker::Address.street_address,
+#     city: Faker::TvShows::GameOfThrones.city,
+#     state: Faker::Address.state_abbr,
+#     zip: Faker::Address.zip,
+#     basketball: 0,
+#     academic: 0,
+#     ppg: 0,
+#     o_rebound: 0,
+#     d_rebound: 0,
+#     two: 0,
+#     three: 0,
+#     free_throw: 0,
+#     assists: 0,
+#     steals: 0,
+#     turn_overs: 0,
+#     blocks: 0,
+#     minutes: 0,
+#     school_id: rand(1..10),
+#     level_id: 1,
+#     position_id: rand(1..5),
+#     year_id: rand(2..6),
+#     funnel_id: 1,
+#     status_id: 3
 #   )
 # end
 #
@@ -227,8 +262,8 @@
 #     school_id: rand(1..10),
 #     level_id: rand(1..3),
 #     position_id: rand(1..5),
-#     year_id: rand(1..4),
+#     year_id: rand(1..6),
 #     funnel_id: rand(1..6),
-#     status: 'Rejected'
+#     status_id: 4
 #   )
 # end

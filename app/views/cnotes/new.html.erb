@@ -2,10 +2,14 @@
   <div class="row">
     <h1 class="form_header">Add a Coach's Note</h1>
   </div>
-  <%= form_for @cnote do |f| %>
+  <%= simple_form_for @cnote do |f| %>
     <div class="row">
       <%= f.label :recruit_id, 'Recruit', class: 'form-actions' %>
-      <%= f.select :recruit_id, options_for_select(@recruits) %>
+      <%= f.select :recruit_id, Recruit.where('status_id = 4').collect { |r| [r.name, r.id]} %>
+    </div>
+    <div class="row">
+      <%= f.label :user_id, 'Coach', class: 'form-actions' %>
+      <%= f.select :user_id, User.all.collect { |r| [r.name, r.id]} %>
     </div>
     <div class="row">
       <%= f.label :date, 'Date', class: 'form-actions' %>

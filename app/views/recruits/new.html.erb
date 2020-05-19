@@ -127,7 +127,7 @@
     <% if user_signed_in? %>
       <div class="row">
         <%= f.label :status_id, 'Status', class: 'form-actions' %>
-        <%= f.select :status_id, @status_options %>
+        <%= f.select :status_id, Status.where('id = 1' ).collect { |s| [s.status, s.id] } %>
       </div>
     <% end %>
     <div class="form-actions">
