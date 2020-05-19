@@ -1,9 +1,14 @@
 class CnotesController < ApplicationController
   before_action :authorize_user
+
+  def show
+    @cnote = Cnote.find(params[:id])
+    @recruit = @cnote.recruit
+    @user = @cnote.user
+  end
+
   def index
     @cnotes = Cnote.all
-    @users = User.all
-    @recruits = Recruit.all
   end
 
   def new

@@ -13,7 +13,7 @@ class YearsController < ApplicationController
     @year = Year.new(year_params)
     if @year.save
       flash[:notice] = "New Class Added!"
-      redirect_to @year
+      redirect_to current_user_path
     else
       flash[:alert] = "New Class Not Created"
       render :new

@@ -12,7 +12,7 @@ class PositionsController < ApplicationController
     @position = Position.new(position_params)
     if @position.save
       flash[:notice] = "New Position Added!"
-      redirect_to @position
+      redirect_to current_user_path
     else
       flash[:alert] = "New Position Not Created"
       render :new
