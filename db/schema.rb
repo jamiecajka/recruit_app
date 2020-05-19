@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_150533) do
+ActiveRecord::Schema.define(version: 2020_05_19_195159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,25 +61,25 @@ ActiveRecord::Schema.define(version: 2020_05_18_150533) do
     t.string "city", null: false
     t.string "state", null: false
     t.string "zip", null: false
-    t.integer "basketball", null: false
-    t.integer "academic", null: false
-    t.string "ppg", null: false
-    t.string "o_rebound", null: false
-    t.string "d_rebound", null: false
-    t.string "two", null: false
-    t.string "three", null: false
-    t.string "free_throw", null: false
-    t.string "assists", null: false
-    t.string "steals", null: false
-    t.string "turn_overs", null: false
-    t.string "blocks", null: false
-    t.string "minutes", null: false
+    t.string "basketball", default: "0", null: false
+    t.string "academic", default: "0", null: false
+    t.string "ppg", default: "0", null: false
+    t.string "o_rebound", default: "0", null: false
+    t.string "d_rebound", default: "0", null: false
+    t.string "two", default: "0", null: false
+    t.string "three", default: "0", null: false
+    t.string "free_throw", default: "0", null: false
+    t.string "assists", default: "0", null: false
+    t.string "steals", default: "0", null: false
+    t.string "turn_overs", default: "0", null: false
+    t.string "blocks", default: "0", null: false
+    t.string "minutes", default: "0", null: false
     t.bigint "school_id", null: false
     t.bigint "position_id", null: false
-    t.bigint "funnel_id", default: 1, null: false
+    t.bigint "funnel_id"
     t.bigint "level_id"
     t.bigint "year_id", null: false
-    t.bigint "status_id"
+    t.bigint "status_id", default: 2, null: false
     t.index ["funnel_id"], name: "index_recruits_on_funnel_id"
     t.index ["level_id"], name: "index_recruits_on_level_id"
     t.index ["position_id"], name: "index_recruits_on_position_id"

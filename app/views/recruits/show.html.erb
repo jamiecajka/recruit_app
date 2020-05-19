@@ -48,16 +48,19 @@
       <h3>GPA: <span style='color:#f27820'><%= @recruit.gpa %></span></h3>
       <h3>ACT: <span style='color:#f27820'><%= @recruit.act %></span></h3>
     </div>
-    <h3>Notes</h3>
-        <% @mnotes.each do |m| %>
-          <% if m.recruit.id === @recruit.id %>
-            <a href= <%= edit_mnote_path(m.id) %> class='more_links' >
-              <h4>Edit</h4>
-            </a>
-            <p><%= m.text %></p>
-          <% end %>
+      <h3>Notes</h3>
+      <a href= <%= new_mnote_path %> class='more_links' >
+        <h4><span style='color:#f27820'>Add New Note </span></h4>
+      </a>
+      <% @mnotes.each do |m| %>
+        <% if m.recruit_id === @recruit.id %>
+          <a href= <%= edit_mnote_path(m.id) %> class='more_links' >
+            <h4><span style='color:#f27820'>Edit</span></h4>
+          </a>
+          <p><%= m.text %></p>
         <% end %>
-      </div>
+      <% end %>
+    </div>
   </div>
 
 <button class="accordion">Stats</button>
@@ -93,11 +96,14 @@
 <div class="panel">
   <div class="recruit_info">
     <h3>Notes</h3>
+    <a href= <%= new_cnote_path %> class='more_links' >
+      <h4><span style='color:#f27820'>Add New Note </span></h4>
+    </a>
     <% @cnotes.each do |c| %>
-      <% if c.recruit.id === @recruit.id %>
-        <p><span style='color:#f27820'><%= c.date %>: <%= c.user.name %></span> </p>
+      <% if c.recruit_id === @recruit.id %>
+        <p><%= c.date %>: <%= c.user.name %> </p>
         <a href= <%= edit_cnote_path(c.id) %> class='more_links' >
-          <h4>Edit</h4>
+          <h4><span style='color:#f27820'>Edit</span></h4>
         </a>
         <p><%= c.text %></p>
       <% end %>
