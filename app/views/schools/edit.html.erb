@@ -15,34 +15,34 @@
     </div>
       <div class="row">
         <%= f.label :name, 'School Name', class: 'form-actions' %>
-        <%= f.text_field :name, required: true %>
+        <%= f.text_field :name, required: true, class: 'text_field' %>
       </div>
       <div class="row">
       <%= f.label :address, 'Address', class: 'form-actions' %>
-      <%= f.text_field :address %>
+      <%= f.text_field :address, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :city, 'City', class: 'form-actions' %>
-      <%= f.text_field :city, required: true %>
+      <%= f.text_field :city, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :state, 'State', class: 'form-actions' %>
-      <%= f.text_field :state, required: true %>
+      <%= f.text_field :state, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :zip, 'Zip Code', class: 'form-actions' %>
-      <%= f.text_field :zip, required: true %>
+      <%= f.text_field :zip, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :coach, 'Head Coach', class: 'form-actions' %>
-      <%= f.text_field :coach, required: true %>
+      <%= f.text_field :coach, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :phone, 'Phone', class: 'form-actions' %>
-      <%= f.text_field :phone, required: true %>
+      <%= f.text_field :phone, required: true, class: 'text_field' %>
     </div>
     <div class="form-actions">
-      <%= f.submit 'Update' %>
+      <%= f.button 'Update' %>
       <p><%= link_to "Delete School", school_path(@school.id), data: { confirm: "Are you sure? Schools should only be deleted if it is a duplicate. Before deleting, make sure no recruits/applicants are using this school." }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>

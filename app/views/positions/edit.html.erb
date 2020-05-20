@@ -15,10 +15,10 @@
     </div>
     <div class="row">
       <%= f.label :name, 'Name', class: 'form-actions' %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'text_field' %>
     </div>
     <div class="form-actions">
-      <%= f.submit 'Update' %>
+      <%= f.button 'Update' %>
       <p><%= link_to "Delete Position", position_path(@position.id), data: { confirm: "Are you sure? Position item should only be deleted if it is a duplicate" }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>

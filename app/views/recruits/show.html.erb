@@ -10,25 +10,23 @@
   </div>
 </div>
 <br>
-<div class="recruit_info">
+<div class="recruit_box_one">
   <div class="grid-container">
-    <h3>Class: <span style='color:#f27820'><%= @recruit.year.year %></span></h3>
-    <h3>Level: <span style='color:#f27820'><%= @recruit.level.name %></span></h3>
+    <h3 class="item_left">Class: <span style='color:#f27820'><%= @recruit.year.year %></span></h3>
+    <h3 class="item_right">Level: <span style='color:#f27820'><%= @recruit.level.name %></span></h3>
   </div>
   <div class="grid-container">
-  <h3>Funnel: <span style='color:#f27820'><%= @recruit.funnel.name %></span></h3>
-  <h3>Position: <span style='color:#f27820'><%= @recruit.position.name %></span></h3>
+  <h3 class="item_left">Funnel: <span style='color:#f27820'><%= @recruit.funnel.name %></span></h3>
+  <h3 class="item_right">Position: <span style='color:#f27820'><%= @recruit.position.name %></span></h3>
   </div>
 </div>
 
 <button class="accordion">Recruit Info</button>
 <div class="panel">
   <div class="recruit_info">
-    <div class="grid-container">
       <h3>Address: <span style='color:#f27820'><%= @recruit.address %></span></h3>
-      <h3>City: <span style='color:#f27820'><%= @recruit.city %></span></h3>
-    </div>
     <div class="grid-container">
+      <h3>City: <span style='color:#f27820'><%= @recruit.city %></span></h3>
       <h3>State: <span style='color:#f27820'><%= @recruit.state %></span></h3>
       <h3>Zip: <span style='color:#f27820'><%= @recruit.zip %></span></h3>
     </div>
@@ -36,58 +34,60 @@
       <h3>Phone: <span style='color:#f27820'><%= @recruit.phone %></span></h3>
       <h3>Email: <span style='color:#f27820'><%= @recruit.email %></span></h3>
     </div>
+    <h3>School: <span style='color:#f27820'><%= link_to @recruit.school.name, school_path(@recruit.school.id), {class: 'more_links', style: 'font-size: 30px'} %></span></h3>
     <div class="grid-container">
-      <h3>Height: <span style='color:#f27820'><%= @recruit.height %></span></h3>
+      <h3>Academic Scholarship Offer: $<span style='color:#f27820'><%= @recruit.academic %></span></h3>
       <h3>Basketball Scholarship Offer: $<span style='color:#f27820'><%= @recruit.basketball %></span></h3>
     </div>
-    <div class="grid-container">
-      <h3>School: <span style='color:#f27820'><%= link_to @recruit.school.name, school_path(@recruit.school.id), {class: 'more_links'} %></span></h3>
-      <h3>Academic Scholarship Offer: $<span style='color:#f27820'><%= @recruit.academic %></span></h3>
+    <div class="recruit_box_one">
+      <div class="grid-container">
+        <h3 class="item_left">GPA: <span style='color:#f27820'><%= @recruit.gpa %></span></h3>
+        <h3 class="item_right">ACT: <span style='color:#f27820'><%= @recruit.act %></span></h3>
+      </div>
     </div>
-    <div class="grid-container">
-      <h3>GPA: <span style='color:#f27820'><%= @recruit.gpa %></span></h3>
-      <h3>ACT: <span style='color:#f27820'><%= @recruit.act %></span></h3>
-    </div>
+    <div class='show_header'
       <h3>Notes</h3>
-      <a href= <%= new_mnote_path %> class='more_links' >
+    </div>
+      <a href= <%= new_mnote_path %> class='show_links' >
         <h4><span style='color:#f27820'>Add New Note </span></h4>
       </a>
-      <% @mnotes.each do |m| %>
-        <% if m.recruit_id === @recruit.id %>
-          <a href= <%= edit_mnote_path(m.id) %> class='more_links' >
-            <h4><span style='color:#f27820'>Edit</span></h4>
-          </a>
-          <p><%= m.text %></p>
-        <% end %>
+    <% @mnotes.each do |m| %>
+      <% if m.recruit_id === @recruit.id %>
+        <a href= <%= edit_mnote_path(m.id) %> class='show_links' >
+          <h4>Edit</h4>
+        </a>
+        <p><span style='color:#f27820'><%= m.text %></p>
       <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
 
 <button class="accordion">Stats</button>
 <div class="panel">
-  <div class="recruit_info">
+  <div class="recruit_box_one">
     <div class="grid-container">
-      <h3>Minutes: <span style='color:#f27820'><%= @recruit.minutes %></span></h3>
+      <h3 class="item_left">Height: <span style='color:#f27820'><%= @recruit.height %></span></h3>
+      <h3 class="item_right">Minutes: <span style='color:#f27820'><%= @recruit.minutes %></span></h3>
     </div>
     <div class="grid-container">
       <h3>Offensive Rebounds: <span style='color:#f27820'><%= @recruit.o_rebound %></span></h3>
-      <h3>Deffensive Rebounds: <span style='color:#f27820'><%= @recruit.d_rebound %></span></h3>
+      <h3>Defensive Rebounds: <span style='color:#f27820'><%= @recruit.d_rebound %></span></h3>
     </div>
     <div class="grid-container">
-      <h3>PPG: <span style='color:#f27820'><%= @recruit.ppg %></span></h3>
-      <h3>Two Points: <span style='color:#f27820'><%= @recruit.two %></span></h3>
+      <h3 class="item_left">PPG: <span style='color:#f27820'><%= @recruit.ppg %></span></h3>
+      <h3 class="item_right">Two Points: <span style='color:#f27820'><%= @recruit.two %></span></h3>
     </div>
     <div class="grid-container">
-      <h3>Three Points: <span style='color:#f27820'><%= @recruit.three %></span></h3>
-      <h3>Free Throws: <span style='color:#f27820'><%= @recruit.free_throw %></span></h3>
+      <h3 class="item_left">Three Points: <span style='color:#f27820'><%= @recruit.three %></span></h3>
+      <h3 class="item_right">Free Throws: <span style='color:#f27820'><%= @recruit.free_throw %></span></h3>
     </div>
     <div class="grid-container">
-      <h3>Assists: <span style='color:#f27820'><%= @recruit.assists %></span></h3>
-      <h3>Steals: <span style='color:#f27820'><%= @recruit.steals %></span></h3>
+      <h3 class="item_left">Assists: <span style='color:#f27820'><%= @recruit.assists %></span></h3>
+      <h3 class="item_right">Steals: <span style='color:#f27820'><%= @recruit.steals %></span></h3>
     </div>
     <div class="grid-container">
-      <h3>Turn-Overs: <span style='color:#f27820'><%= @recruit.turn_overs %></span></h3>
-      <h3>Blocks: <span style='color:#f27820'><%= @recruit.blocks %></span></h3>
+      <h3 class="item_left">Turn-Overs: <span style='color:#f27820'><%= @recruit.turn_overs %></span></h3>
+      <h3 class="item_right">Blocks: <span style='color:#f27820'><%= @recruit.blocks %></span></h3>
     </div>
   </div>
 </div>
@@ -95,14 +95,16 @@
 <button class="accordion">Coach's Notes</button>
 <div class="panel">
   <div class="recruit_info">
-    <h3>Notes</h3>
-    <a href= <%= new_cnote_path %> class='more_links' >
+    <div class='show_header'
+      <h3>Notes</h3>
+    </div>
+    <a href= <%= new_cnote_path %> class='show_links' >
       <h4><span style='color:#f27820'>Add New Note </span></h4>
     </a>
     <% @cnotes.each do |c| %>
       <% if c.recruit_id === @recruit.id %>
         <p><%= c.date %>: <%= c.user.name %> </p>
-        <a href= <%= edit_cnote_path(c.id) %> class='more_links' >
+        <a href= <%= edit_cnote_path(c.id) %> class='show_links' >
           <h4><span style='color:#f27820'>Edit</span></h4>
         </a>
         <p><%= c.text %></p>
