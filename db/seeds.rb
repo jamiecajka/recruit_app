@@ -95,15 +95,16 @@
 #
 # 3.times do
 #   User.create(
-#       name: Faker::Superhero.name,
-#       active: true
+#     name: Faker::Superhero.name,
+#     email: Faker::Internet.safe_email,
+#     encrypted_password: 'password',
+#     active: true
 #   )
 # end
 #
-# 2.times do
 #   User.create(
-#     name: Faker::Superhero.name,
-#     email: "",
+#     name: Jamie Cajka,
+#     email: jamiecajka@gmail.com,
 #     encrypted_password: 'password',
 #     active: true
 #   )
@@ -137,7 +138,7 @@
 #     school_id: rand(1..10),
 #     level_id: rand(1..3),
 #     position_id: rand(1..5),
-#     year_id: rand(2..6),
+#     year_id: rand(2..4),
 #     funnel_id: rand(1..6),
 #     status_id: 1
 #   )
@@ -154,17 +155,10 @@
 #   Cnote.create(
 #     text: Faker::Hipster.paragraph,
 #     recruit_id: rand(1..30),
-#     user_id: 4,
+#     user_id: rand(1-3),
 #     date: Faker::Date.between(from: 2.years.ago, to: Date.today)
 #   )
 # end
-#
-# User.create(
-#   name: 'Jamie',
-#   email: 'jamiecajka@gmail.com',
-#   encrypted_password: 'password',
-#   active: true
-# )
 #
 # 10.times do
 #   Recruit.create(
@@ -194,7 +188,7 @@
 #     school_id: rand(1..10),
 #     level_id: 1,
 #     position_id: rand(1..5),
-#     year_id: rand(2..6),
+#     year_id: rand(2..4),
 #     funnel_id: 1,
 #     status_id: 2
 #   )
@@ -228,7 +222,7 @@
 #     school_id: rand(1..10),
 #     level_id: 1,
 #     position_id: rand(1..5),
-#     year_id: rand(2..6),
+#     year_id: rand(1..4),
 #     funnel_id: 1,
 #     status_id: 3
 #   )
@@ -262,7 +256,7 @@
 #     school_id: rand(1..10),
 #     level_id: rand(1..3),
 #     position_id: rand(1..5),
-#     year_id: rand(1..6),
+#     year_id: 1,
 #     funnel_id: rand(1..6),
 #     status_id: 4
 #   )
