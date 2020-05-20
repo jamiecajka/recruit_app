@@ -14,6 +14,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  text-align: center;
 }
 
 .sign_in_head {
@@ -52,6 +53,12 @@ body {
   color: inherit;
 }
 
+.show_links {
+  text-decoration: none;
+  color: inherit;
+  font-size: 30px;
+}
+
 /* font sizing */
 
 .form_header {
@@ -71,10 +78,21 @@ body {
   font-size: 45px;
 }
 
+.recruit_box_one {
+  color: #A4A4A4;
+  font-size: 30px;
+  margin: auto;
+  width: 50%;
+  padding: 0%;
+}
+
 .recruit_info {
   color: #A4A4A4;
   font-size: 30px;
   text-align: center;
+  margin: auto;
+  width: 75%;
+  padding: 0%;
 }
 
 .index_header {
@@ -85,6 +103,36 @@ body {
 .recruit_status {
   font-size: 30px;
   color: #A4A4A4;
+}
+
+.show_header {
+  font-size: 50px;
+  text-decoration: underline #f27820;
+}
+
+select {
+  width: 200px;
+  height: 25px;
+  font-size: 20px;
+}
+
+button {
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  height: 50px;
+  width: 75px;
+}
+
+.text_field {
+  font-size: 20px;
+  height: 25px;
+}
+
+.text_area {
+  font-size: 20px;
+  height: 300px;
+  width: 500px;
 }
 
 /* allignment */
@@ -110,8 +158,20 @@ body {
 
 .recruit_top {
   text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
+ .item_left {
+  text-align: left;
+  margin-right: 75px;
+}
+
+.item_right {
+  text-align: right;
+  margin-left: 60px;
+}
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
@@ -119,7 +179,6 @@ body {
   color: inherit;
   font-size: 25px;
   cursor: pointer;
-  padding: 18px;
   width: 100%;
   text-align: center;
   border: solid 3px black;

@@ -2,7 +2,7 @@
   <div class="row">
     <h1 class="form_header">Add a Coach's Note</h1>
   </div>
-  <%= simple_form_for @cnote do |f| %>
+  <%= form_for @cnote do |f| %>
     <div class="row">
       <%= f.label :recruit_id, 'Recruit', class: 'form-actions' %>
       <%= f.select :recruit_id, Recruit.where('status_id = 4').collect { |r| [r.name, r.id]} %>
@@ -13,14 +13,14 @@
     </div>
     <div class="row">
       <%= f.label :date, 'Date', class: 'form-actions' %>
-      <%= f.date_field :date %>
+      <%= f.date_field :date, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :text, 'Note', class: 'form-actions' %>
-      <%= f.text_area :text, cols: "50", rows: "25" %>
+      <%= f.text_area :text, class: 'text_area' %>
     </div>
     <div class="form-actions">
-      <%= f.submit 'Submit' %>
+      <%= f.button 'Submit' %>
     </div>
   <% end %>
 </div>

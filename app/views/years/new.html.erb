@@ -5,14 +5,14 @@
     </div>
     <div class="row">
       <%= f.label :year, 'Year', class: 'form-actions' %>
-      <%= f.text_field :year %>
+      <%= f.text_field :year, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :active, 'Active', class: 'form-actions' %>
       <%= f.select :active, @active_options %>
     </div>
     <div class="form-actions">
-      <%= f.submit 'Submit' %>
+      <%= f.button 'Submit' %>
     </div>
   <% end %>
 </div>

@@ -35,98 +35,98 @@
     </div>
     <div class="row">
       <%= f.label :name, 'Full Name', class: 'form-actions' %>
-      <%= f.text_field :name, required: true %>
+      <%= f.text_field :name, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :address, 'Address', class: 'form-actions' %>
-      <%= f.text_field :address, required: true %>
+      <%= f.text_field :address, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :city, 'City', class: 'form-actions' %>
-      <%= f.text_field :city, required: true %>
+      <%= f.text_field :city, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :state, 'State', class: 'form-actions' %>
-      <%= f.text_field :state, required: true %>
+      <%= f.text_field :state, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :zip, 'Zip Code', class: 'form-actions' %>
-      <%= f.text_field :zip, required: true %>
+      <%= f.text_field :zip, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :email, 'Email', class: 'form-actions' %>
-      <%= f.text_field :email, required: true %>
+      <%= f.text_field :email, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :phone, 'Phone', class: 'form-actions' %>
-      <%= f.text_field :phone, required: true %>
+      <%= f.text_field :phone, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :height, 'Height', class: 'form-actions' %>
-      <%= f.text_field :height, required: true %>
+      <%= f.text_field :height, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :gpa, 'GPA', class: 'form-actions' %>
-      <%= f.text_field :gpa, required: true %>
+      <%= f.text_field :gpa, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :act, 'ACT Score', class: 'form-actions' %>
-      <%= f.text_field :act %>
+      <%= f.text_field :act, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :academic, 'Academic Scholarship awarded, if applicable', class: 'form-actions' %>
-      <%= f.text_field :academic %>
+      <%= f.text_field :academic, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :basketball, 'Basketball Scholarship awarded, if applicable', class: 'form-actions' %>
-      <%= f.text_field :basketball %>
+      <%= f.text_field :basketball, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :minutes, 'Minutes', class: 'form-actions' %>
-      <%= f.text_field :minutes %>
+      <%= f.text_field :minutes, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :ppg, 'Points', class: 'form-actions' %>
-      <%= f.text_field :ppg %>
+      <%= f.text_field :ppg, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :o_rebound, 'Offensive Rebounds', class: 'form-actions' %>
-      <%= f.text_field :o_rebound %>
+      <%= f.text_field :o_rebound, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :d_rebound, 'Defensive Rebounds', class: 'form-actions' %>
-      <%= f.text_field :d_rebound %>
+      <%= f.text_field :d_rebound, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :two, 'Two Point Ave', class: 'form-actions' %>
-      <%= f.text_field :two %>
+      <%= f.text_field :two, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :three, 'Three Point Ave', class: 'form-actions' %>
-      <%= f.text_field :three %>
+      <%= f.text_field :three, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :free_throw, 'Free Throw Ave', class: 'form-actions' %>
-      <%= f.text_field :free_throw %>
+      <%= f.text_field :free_throw, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :assists, 'Assists', class: 'form-actions' %>
-      <%= f.text_field :assists %>
+      <%= f.text_field :assists, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :steals, 'Steals', class: 'form-actions' %>
-      <%= f.text_field :steals %>
+      <%= f.text_field :steals, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :turn_overs, 'Turn Overs', class: 'form-actions' %>
-      <%= f.text_field :turn_overs %>
+      <%= f.text_field :turn_overs, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :status_id, 'Status', class: 'form-actions' %>
       <%= f.select :status_id, @status_options %>
     </div>
     <div class="form-actions">
-      <%= f.submit 'Update' %>
+      <%= f.button 'Update' %>
       <p><%= link_to "Delete Recruit", recruit_path(@recruit.id), data: { confirm: "Are you sure? Recruit should only be deleted if it is a duplicate. If not a duplicate, set status to either Expired or Rejected" }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>
