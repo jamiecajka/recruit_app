@@ -81,6 +81,22 @@
 #    name: "Tweener"
 #  )
 #
+# Status.create(
+#   status: 'Recruit'
+# )
+#
+# Status.create(
+#   status: 'Applicant'
+# )
+#
+# Status.create(
+#   status: 'Rejected'
+# )
+#
+# Status.create(
+#   status: 'Not Selected'
+# )
+#
 # 10.times do
 #   School.create(
 #     name: Faker::University.name,
@@ -93,22 +109,40 @@
 #   )
 # end
 #
-# 3.times do
-#   User.create(
-#     name: Faker::Superhero.name,
-#     email: Faker::Internet.safe_email,
-#     encrypted_password: 'password',
-#     active: true
-#   )
-# end
+# user1 = User.new
+# user1.name = 'Jamie Cajka'
+# user1.email = 'jamiecajka@gmail.com'
+# user1.password = 'password'
+# user1.password_confirmation = 'password'
+# user1.active = true
+# user1.key = 'LC6y-;{$J:Gp<E*v'
+# user1.save!
 #
-#   User.create(
-#     name: Jamie Cajka,
-#     email: jamiecajka@gmail.com,
-#     encrypted_password: 'password',
-#     active: true
-#   )
-# end
+# user2 = User.new
+# user2.name = Faker::Superhero.name
+# user2.email = Faker::Internet.safe_email
+# user2.password = 'password'
+# user2.password_confirmation = 'password'
+# user2.active = true
+# user2.key = 'LC6y-;{$J:Gp<E*v'
+# user2.save!
+#
+# user3 = User.new
+# user3.name = Faker::Superhero.name
+# user3.email = Faker::Internet.safe_email
+# user3.password = 'password'
+# user3.password_confirmation = 'password'
+# user3.active = true
+# user3.key = 'LC6y-;{$J:Gp<E*v'
+# user3.save!
+#
+# user4 = User.new
+# user4.name = Faker::Superhero.name
+# user4.email = Faker::Internet.safe_email
+# user4.password = 'password'
+# user4.password_confirmation = 'password'
+# user4.active = true
+# user4.save!
 #
 # 30.times do
 #   Recruit.create(
@@ -141,22 +175,6 @@
 #     year_id: rand(2..4),
 #     funnel_id: rand(1..6),
 #     status_id: 1
-#   )
-# end
-#
-# 40.times do
-#   Mnote.create(
-#      text: Faker::GreekPhilosophers.quote,
-#      recruit_id: rand(1..30)
-#   )
-# end
-#
-# 60.times do
-#   Cnote.create(
-#     text: Faker::Hipster.paragraph,
-#     recruit_id: rand(1..30),
-#     user_id: rand(1-3),
-#     date: Faker::Date.between(from: 2.years.ago, to: Date.today)
 #   )
 # end
 #
@@ -259,5 +277,21 @@
 #     year_id: 1,
 #     funnel_id: rand(1..6),
 #     status_id: 4
+#   )
+# end
+#
+# 40.times do
+#   Mnote.create(
+#      text: Faker::GreekPhilosophers.quote,
+#      recruit_id: rand(1..30)
+#   )
+# end
+#
+# 60.times do
+#   Cnote.create(
+#     text: Faker::Hipster.paragraph,
+#     recruit_id: rand(1..30),
+#     user_id: rand(1..3),
+#     date: Faker::Date.between(from: 2.years.ago, to: Date.today)
 #   )
 # end
