@@ -1,4 +1,4 @@
-class StausesController < ApplicationController
+class StatusesController < ApplicationController
   before_action :authorize_user
   def index
     @statuses = Status.all
