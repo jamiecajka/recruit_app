@@ -24,8 +24,6 @@ default: &default
 development:
   <<: *default
   database: recruit_app_development
-  username: postgres
-  password: basketball
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,8 +58,6 @@ development:
 test:
   <<: *default
   database: recruit_app_test
-  username: postgres
-  password: basketball
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,5 +81,5 @@ test:
 production:
   <<: *default
   database: recruit_app_production
-  username: postgres
-  password: basketball
+  username: recruit_app
+  password: <%= ENV['RECRUIT_APP_DATABASE_PASSWORD'] %>
