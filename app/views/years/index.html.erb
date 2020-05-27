@@ -4,7 +4,7 @@
  </div>
   <% @years.each do |f| %>
     <a href= <%= edit_year_path(f.id) %> class='more_links' >
-      <h4><%= f.year %> : <span style='color:#A4A4A4'><%= f.active %></h4>
+      <h4><%= f.year %> : <span style='color:#A4A4A4'><%= f.status %></h4>
     </a>
   <% end %>
 </div>

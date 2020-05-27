@@ -13,6 +13,7 @@ class CnotesController < ApplicationController
 
   def new
     @cnote = Cnote.new
+    @user = User.where("status like ?", '%active%').collect { |u| [u.name, u.id]}
   end
 
   def create
@@ -29,6 +30,7 @@ class CnotesController < ApplicationController
   def edit
     @cnote = Cnote.find(params[:id])
     @recruits = Recruit.where('status_id = 1').collect { |r| [r.name, r.id]}
+    @users = User.where("status like ?", '%active%').collect { |u| [u.name, u.id]}
   end
 
   def update

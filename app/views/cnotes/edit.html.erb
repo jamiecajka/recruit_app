@@ -18,6 +18,10 @@
       <%= f.select :recruit_id, options_for_select(@recruits) %>
     </div>
     <div class="row">
+      <%= f.label :user_id, 'Coach', class: 'form-actions' %>
+      <%= f.select :user_id, options_for_select(@users) %>
+    </div>
+    <div class="row">
       <%= f.label :date, 'Date', class: 'form-actions' %>
       <%= f.date_field :date, class: 'text_field' %>
     </div>

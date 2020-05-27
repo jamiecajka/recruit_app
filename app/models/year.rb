@@ -1,13 +1,13 @@
 class Year < ApplicationRecord
   OPTIONS = [
-    [true, 'Active'],
-    [false, 'Inactive']
+    ['active', 'Active'],
+    ['inactive', 'Inactive']
   ]
 
   has_many :recruits
   has_many :applicants
 
   validates :year, presence: true, numericality: true, presence: true, uniqueness: true
-  validates :active, presence: true, inclusion: { in: [true, false] }
+  validates :status, presence: true, inclusion: { in: ['active', 'inactive'] }
 
 end

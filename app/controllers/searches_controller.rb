@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   before_action :authorize_user
   def new
     @search = Search.new
-    @years = Year.where('active = true').collect { |y| [y.year, y.id]}
+    @years = Year.where("status like ?", '%active%').collect { |y| [y.year, y.id]}
     @levels = Level.all.collect { |l| [l.name, l.id]}
     @funnels = Funnel.all.collect { |f| [f.name, f.id]}
     @positions = Position.all.collect { |p| [p.name, p.id]}

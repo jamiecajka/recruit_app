@@ -19,7 +19,7 @@
     </div>
     <div class="row">
       <%= f.label :year_id, 'Graduation Year', class: 'form-actions' %>
-      <%= f.select :year_id, Year.where(active: true ).collect { |y| [y.year, y.id] } %>
+      <%= f.select :year_id, Year.where("status like ?", '%active%').collect { |y| [y.year, y.id] } %>
     </div>
     <div class="row">
       <%= f.label :position_id, 'Position', class: 'form-actions' %>
