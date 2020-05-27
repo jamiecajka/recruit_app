@@ -3,7 +3,7 @@
     <h3>Recruits from Past Classes</h3>
   </div>
   <% @recruits.each do |f| %>
-    <% if f.year.year < Time.new.year %>
+    <% if f.year.status = 'inactive' %>
       <a href= <%= recruit_path(f.id) %> class='more_links'>
         <h4><%= f.name %> <br /></h4>
       </a>
