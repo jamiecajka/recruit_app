@@ -116,6 +116,7 @@ user1.password = 'password'
 user1.password_confirmation = 'password'
 user1.status = 'active'
 user1.key = 'LC6y-;{$J:Gp<E*v'
+user1.superadmin_role = true
 user1.save!
 
 user2 = User.new
@@ -125,6 +126,7 @@ user2.password = 'password'
 user2.password_confirmation = 'password'
 user2.status = 'active'
 user2.key = 'LC6y-;{$J:Gp<E*v'
+user1.superadmin_role = true
 user2.save!
 
 user3 = User.new
@@ -142,7 +144,7 @@ user4.email = Faker::Internet.safe_email
 user4.password = 'password'
 user4.password_confirmation = 'password'
 user4.status = 'inactive'
-user4.save! 
+user4.save!
 
 30.times do
   Recruit.create(
