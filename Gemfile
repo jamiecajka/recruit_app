@@ -14,6 +14,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'foundation-rails'
 gem 'simple_form'
+gem 'faker', github: 'stympy/faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
