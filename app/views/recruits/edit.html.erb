@@ -11,7 +11,7 @@
   <% end %>
   <div class='wrapper'>
     <div class="row">
-      <h1 class="form_header">Update <%= @recruit.name%></h1>
+      <h1 class="form_header">Update <%= @recruit.first_name%> <%= @recruit.last_name%></h1>
     </div>
     <div class="row">
       <%= f.label :school_id, 'School', class: 'form-actions' %>
@@ -34,8 +34,12 @@
       <%= f.select :funnel_id, Funnel.all.collect { |f| [f.name, f.id] } %>
     </div>
     <div class="row">
-      <%= f.label :name, 'Full Name', class: 'form-actions' %>
-      <%= f.text_field :name, required: true, class: 'text_field' %>
+      <%= f.label :first_name, 'First Name', class: 'form-actions' %>
+      <%= f.text_field :first_name, required: true, class: 'text_field' %>
+    </div>
+    <div class="row">
+      <%= f.label :last_name, 'Last Name', class: 'form-actions' %>
+      <%= f.text_field :last_name, required: true, class: 'text_field' %>
     </div>
     <div class="row">
       <%= f.label :address, 'Address', class: 'form-actions' %>

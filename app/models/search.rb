@@ -1,7 +1,7 @@
 class Search < ApplicationRecord
 
   def search_recruits
-    recruits = Recruit.all
+    recruits = Recruit.all.order('last_name ASC')
 
     recruits = recruits.where(year_id: year_id) if year_id.present?
     recruits = recruits.where(level_id: level_id) if level_id.present?

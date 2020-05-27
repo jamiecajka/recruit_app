@@ -12,8 +12,8 @@ class RecruitsController < ApplicationController
   end
 
   def index
-    @recruits = Recruit.where('status_id = 4')
-    @more_recruits = Recruit.where('status_id = 3')
+    @recruits = Recruit.where('status_id = 4').order('last_name ASC')
+    @more_recruits = Recruit.where('status_id = 3').order('last_name ASC')
   end
 
   def new

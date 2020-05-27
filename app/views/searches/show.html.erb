@@ -9,7 +9,7 @@
     <% @searchResults.in_groups_of(4,false).each do |group| %>
       <% group.each do |p| %>
         <a href= <%= recruit_path(p.id) %> class='more_links'>
-          <h4 ><%= p.name %></h4>
+          <h4 ><%= p.last_name %>, <%= p.first_name %></h4>
         </a>
       <% end %>
     <% end %>
