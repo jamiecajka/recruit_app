@@ -148,7 +148,8 @@ user4.save!
 
 30.times do
   Recruit.create(
-    name: Faker::TvShows::GameOfThrones.character,
+    first_name: Faker::TvShows::GameOfThrones.dragon,
+    last_name:  Faker::TvShows::GameOfThrones.house,
     gpa: Faker::Number.decimal(l_digits: 1, r_digits: 3),
     act: rand(20..36),
     height: Faker::Demographic.height,
@@ -182,7 +183,8 @@ end
 
 10.times do
   Recruit.create(
-    name: Faker::TvShows::GameOfThrones.character,
+    first_name: Faker::TvShows::GameOfThrones.dragon,
+    last_name: Faker::TvShows::GameOfThrones.house,
     gpa: Faker::Number.decimal(l_digits: 1, r_digits: 3),
     act: rand(20..36),
     height: Faker::Demographic.height,
@@ -216,7 +218,8 @@ end
 
 10.times do
   Recruit.create(
-    name: Faker::TvShows::GameOfThrones.character,
+    first_name: Faker::TvShows::GameOfThrones.dragon,
+    last_name: Faker::TvShows::GameOfThrones.house,
     gpa: Faker::Number.decimal(l_digits: 1, r_digits: 3),
     act: rand(20..36),
     height: Faker::Demographic.height,
@@ -250,7 +253,8 @@ end
 
 10.times do
   Recruit.create(
-    name: Faker::TvShows::GameOfThrones.character,
+    first_name: Faker::TvShows::GameOfThrones.dragon,
+    last_name: Faker::TvShows::GameOfThrones.house,
     gpa: Faker::Number.decimal(l_digits: 1, r_digits: 3),
     act: rand(20..36),
     height: Faker::Demographic.height,

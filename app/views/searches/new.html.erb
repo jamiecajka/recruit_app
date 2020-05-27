@@ -20,10 +20,6 @@
       <%= s.label :position %>
       <%= s.select :position_id, options_for_select(@positions), :include_blank => true %>
     </div>
-    <div class="row">
-      <%= s.label :recruit %>
-      <%= s.select :name, options_for_select(@recruit_name), :include_blank => true %>
-    </div>
     <div class="form-actions">
       <%= s.button 'Submit' %>
     </div>
