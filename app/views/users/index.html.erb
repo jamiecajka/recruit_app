@@ -1,3 +1,6 @@
+<% if can? :manage, User %>
+	<p>Visible only for superadmins</p>
+<% end %>
 <div class="wrapper">
  <div class="index_header">
    <h3>Users</h3>

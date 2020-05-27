@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_151922) do
+ActiveRecord::Schema.define(version: 2020_05_27_180805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,8 @@ ActiveRecord::Schema.define(version: 2020_05_27_151922) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.string "key", default: ""
+    t.boolean "superadmin_role"
+    t.boolean "user_role"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
