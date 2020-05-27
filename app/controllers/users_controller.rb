@@ -24,13 +24,14 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @active_options = User::OPTIONS
   end
 
   def update
-   @user = User.find(params[:id])
-   if @user.update_attributes(user_params)
+    @user = User.find(params[:id])
+    if @user.update(user_params)
      flash[:notice] = "User Updated!"
-     redirect_to @user
+     redirect_to user_path(current_user)
    else
      render 'edit'
    end
@@ -43,7 +44,7 @@ class UsersController < ApplicationController
       :name,
       :email,
       :encrypted_password,
-      :active,
+      :status,
       :key
     )
   end

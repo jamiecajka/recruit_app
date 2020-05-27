@@ -48,7 +48,7 @@ class YearsController < ApplicationController
   def year_params
     params.require(:year).permit(
       :year,
-      :active
+      :status
     )
   end
 

@@ -51,22 +51,22 @@ Funnel.create(
 
 Year.create(
   year: 2019,
-  active: false
+  status: 'inactive'
 )
 
  Year.create(
    year: 2020,
-   active: true
+   status: 'active'
  )
 
  Year.create(
    year: 2021,
-   active: true
+   status: 'active'
  )
 
  Year.create(
    year: 2022,
-   active: true
+   status: 'active'
  )
 
  Level.create(
@@ -114,7 +114,7 @@ user1.name = 'Jamie Cajka'
 user1.email = 'jamiecajka@gmail.com'
 user1.password = 'password'
 user1.password_confirmation = 'password'
-user1.active = true
+user1.status = 'active'
 user1.key = 'LC6y-;{$J:Gp<E*v'
 user1.save!
 
@@ -123,7 +123,7 @@ user2.name = Faker::Superhero.name
 user2.email = Faker::Internet.safe_email
 user2.password = 'password'
 user2.password_confirmation = 'password'
-user2.active = true
+user2.status = 'active'
 user2.key = 'LC6y-;{$J:Gp<E*v'
 user2.save!
 
@@ -132,7 +132,7 @@ user3.name = Faker::Superhero.name
 user3.email = Faker::Internet.safe_email
 user3.password = 'password'
 user3.password_confirmation = 'password'
-user3.active = true
+user3.status = 'active'
 user3.key = 'LC6y-;{$J:Gp<E*v'
 user3.save!
 
@@ -141,8 +141,8 @@ user4.name = Faker::Superhero.name
 user4.email = Faker::Internet.safe_email
 user4.password = 'password'
 user4.password_confirmation = 'password'
-user4.active = true
-user4.save!
+user4.status = 'inactive'
+user4.save! 
 
 30.times do
   Recruit.create(
