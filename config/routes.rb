@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'users#new'
 
-  devise_for :users, :path_prefix => 'my'
+  devise_for :users
+  
   resources :users do
     resources :recruits
     resources :schools

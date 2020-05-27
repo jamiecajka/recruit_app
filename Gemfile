@@ -15,6 +15,8 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'simple_form'
 gem 'faker', github: 'stympy/faker'
+gem 'rails_admin'
+gem 'cancancan'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
