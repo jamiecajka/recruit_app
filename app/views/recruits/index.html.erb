@@ -17,7 +17,7 @@
   </div>
   <% @more_recruits.each do |r| %>
       <a href= <%= recruit_path(r.id) %> class='more_links'>
-        <h4><%= f.last_name%>, <%= f.first_name %><br /></h4>
+        <h4><%= r.last_name%>, <%= r.first_name %><br /></h4>
       </a>
   <% end %>
 </div>
