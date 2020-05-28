@@ -1,9 +1,5 @@
 # README
 
-[![Build Status](https://app.codeship.com/projects/7fd82110-8270-0138-9ad0-12f1804cdbeb/status?branch=master)
-[![Code Climate](https://codeclimate.com/github/<jamiecajka>/<recruit_app>/badges/gpa.svg)
-
-
 # Recruit App
  This project was created as the Stage Two competency project for the Nebraska DevLabs (NeDL) Pipeline Program through Doane University and Don't Panic Labs. This app was created to help manage recruits for the Women's Basketaball program at Doane University. The requirements were that an prospective student could submit an application to the program, and coaches could add recruits, accept or deny applications, view recruits, add notes to a recruit, and track progress of a recruit through their funnel progress system. 
 
