@@ -22,21 +22,7 @@ class Recruit < ApplicationRecord
   validates :state, presence: true
   validates :zip, presence: true
   validates :phone, presence: true
-  validates :gpa, presence: true
   validates :height, presence: true
   validates :email, presence: true
-  validates :basketball, presence: true
-  validates :academic, presence: true
-  validates :ppg, presence: true
-  validates :o_rebound, presence: true
-  validates :d_rebound, presence: true
-  validates :two, presence: true
-  validates :three, presence: true
-  validates :free_throw, presence: true
-  validates :assists, presence: true
-  validates :steals, presence: true
-  validates :turn_overs, presence: true
-  validates :blocks, presence: true
-  validates :minutes, presence: true
 
 end
