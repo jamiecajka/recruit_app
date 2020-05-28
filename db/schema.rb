@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_134558) do
+ActiveRecord::Schema.define(version: 2020_05_28_143237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_134558) do
 
   create_table "recruits", force: :cascade do |t|
     t.string "first_name", null: false
-    t.string "gpa"
+    t.string "gpa", default: "0"
     t.integer "act"
     t.string "height", null: false
     t.string "phone", null: false

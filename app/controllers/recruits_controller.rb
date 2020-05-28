@@ -58,7 +58,8 @@ class RecruitsController < ApplicationController
 
   def recruit_params
     params.require(:recruit).permit(
-      :name,
+      :first_name,
+      :last_name,
       :address,
       :city,
       :state,
