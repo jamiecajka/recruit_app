@@ -15,7 +15,7 @@
     </div>
     <div class="row">
       <%= f.label :recruit_id, 'Recruit', class: 'form-actions' %>
-      <%= f.select :recruit_id, options_for_select(@recruits) %>
+      <%= f.select :recruit_id, Recruit.where('status_id = 1').collect { |r| [r.full_name, r.id]} %>
     </div>
     <div class="row">
       <%= f.label :text, 'Note', class: 'form-actions' %>

@@ -15,7 +15,7 @@
     </div>
     <div class="row">
       <%= f.label :recruit_id, 'Recruit', class: 'form-actions' %>
-      <%= f.select :recruit_id, options_for_select(@recruits) %>
+      <%= f.select :recruit_id, Recruit.where('status_id = 1').collect { |r| [r.full_name, r.id]} %>
     </div>
     <div class="row">
       <%= f.label :user_id, 'Coach', class: 'form-actions' %>
@@ -30,7 +30,7 @@
       <%= f.text_area :text, class: 'text_area' %>
     </div>
     <div class="form-actions">
-      <%= f.button :submit, 'Update' %>
+      <%= f.button 'Update' %>
       <p><%= link_to "Delete Note", cnote_path(@cnote.id), data: { confirm: "Are you sure?" }, method: :delete, :class => 'user_links' %> <br />
     </div>
   </div>

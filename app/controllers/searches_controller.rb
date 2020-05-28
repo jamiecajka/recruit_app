@@ -7,6 +7,7 @@ class SearchesController < ApplicationController
     @funnels = Funnel.all.collect { |f| [f.name, f.id]}
     @positions = Position.all.collect { |p| [p.name, p.id]}
     @status_options = Status.where('id between 1 and 2').collect { |s| [s.status, s.id]}
+    @recruits = Recruit.where('status_id = 1').collect { |r| [r.full_name, r.id]}
   end
 
   def create

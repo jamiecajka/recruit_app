@@ -2,7 +2,7 @@
   <%= form_for @search do |s| %>
     <div class="row">
       <%= s.label :status %>
-      <%= s.select :status_id, options_for_select(@status_options) %>
+      <%= s.select :status_id, options_for_select(@status_options), :include_blank => true %>
     </div>
     <div class="row">
       <%= s.label :year_id %>
@@ -19,6 +19,10 @@
     <div class="row">
       <%= s.label :position %>
       <%= s.select :position_id, options_for_select(@positions), :include_blank => true %>
+    </div>
+    <div class="row">
+      <%= s.label :recruit %>
+      <%= s.select :name, options_for_select(@recruits), :include_blank => true %>
     </div>
     <div class="form-actions">
       <%= s.button 'Submit' %>
