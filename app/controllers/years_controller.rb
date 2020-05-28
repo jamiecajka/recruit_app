@@ -6,7 +6,6 @@ class YearsController < ApplicationController
 
   def new
     @year = Year.new
-    @active_options = Year::OPTIONS
   end
 
   def create
@@ -22,7 +21,6 @@ class YearsController < ApplicationController
 
   def edit
     @year = Year.find(params[:id])
-    @active_options = Year::OPTIONS
   end
 
   def update
