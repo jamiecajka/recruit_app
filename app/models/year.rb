@@ -1,8 +1,4 @@
 class Year < ApplicationRecord
-  OPTIONS = [
-    ['active', 'Active'],
-    ['inactive', 'Inactive']
-  ]
 
   has_many :recruits
   has_many :applicants
