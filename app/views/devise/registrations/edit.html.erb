@@ -42,6 +42,18 @@
       <%= f.select :status, options_for_select([['Active', 'active'], ['Inactive', 'inactive']]) %>
     </div>
 
+    <% if can? :manage, User %>
+    <div class="field">
+      <%= f.label :user_role %><br />
+      <%= f.select :user_role, options_for_select([[true], [false]]) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :superadmin_role %><br />
+      <%= f.select :superadmin_role, options_for_select([[true], [false]]) %>
+    </div>
+    <% end %>
+
     <div class="actions">
       <%= f.submit "Update" %>
     </div>

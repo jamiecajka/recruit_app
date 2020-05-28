@@ -117,6 +117,7 @@ user1.password_confirmation = 'password'
 user1.status = 'active'
 user1.key = 'LC6y-;{$J:Gp<E*v'
 user1.superadmin_role = true
+user1.user_role = false
 user1.save!
 
 user2 = User.new
@@ -126,7 +127,6 @@ user2.password = 'password'
 user2.password_confirmation = 'password'
 user2.status = 'active'
 user2.key = 'LC6y-;{$J:Gp<E*v'
-user1.superadmin_role = true
 user2.save!
 
 user3 = User.new
