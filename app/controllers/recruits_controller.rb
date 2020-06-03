@@ -24,7 +24,7 @@ class RecruitsController < ApplicationController
     @recruit = Recruit.new(recruit_params)
     if @recruit.save
       flash[:notice] = "New Recruit Added!"
-      redirect_to @recruit
+      redirect_to new_recruit_path
     else
       flash[:alert] = "New Recruit Not Created"
       render :new
