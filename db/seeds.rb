@@ -49,6 +49,10 @@ Funnel.create(
   name: "Commited"
 )
 
+Funnel.create(
+  name: "Applicant Submit"
+)
+
 Year.create(
   year: 2019,
   status: 'inactive'
@@ -79,6 +83,10 @@ Year.create(
 
  Level.create(
    name: "Tweener"
+ )
+
+ Level.create(
+   name: "Unsorted"
  )
 
 Status.create(
