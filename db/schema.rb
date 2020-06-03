@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_143237) do
+ActiveRecord::Schema.define(version: 2020_06_03_165550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 2020_05_28_143237) do
     t.string "minutes", default: "0", null: false
     t.bigint "school_id", null: false
     t.bigint "position_id", null: false
-    t.bigint "funnel_id"
-    t.bigint "level_id"
+    t.bigint "funnel_id", default: 7
+    t.bigint "level_id", default: 4
     t.bigint "year_id", null: false
     t.bigint "status_id", default: 2, null: false
     t.string "last_name", null: false
