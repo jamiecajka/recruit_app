@@ -5,7 +5,7 @@
        <h1>Hello <%= @user.name %>, what would you like to do?</h1>
      </div>
      <% if can? :manage, @user %>
-      <h2><%= link_to 'View Users', users_path, :class => 'user_links' %></h2>
+      <h2><%= link_to 'Admin Dashboard', rails_admin_path, :class => 'user_links' %></h2>
      <% end %>
      <h2><%= link_to 'View Recruits', new_search_path, :class => 'user_links' %></h2>
      <h2><%= link_to 'Add Recruit', new_recruit_path, :class => 'user_links' %></h2>

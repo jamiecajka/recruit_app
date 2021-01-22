@@ -37,6 +37,12 @@ class UsersController < ApplicationController
    end
  end
 
+ def admin
+    @user = User.find params[:user_id]
+    @user.toggle :admin if can? :manage, @user
+    redirect_to @user
+  end
+
   private
 
   def user_params

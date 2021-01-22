@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'users#new'
 
   devise_for :users
-  
+
   resources :users do
     resources :recruits
     resources :schools
